@@ -3,93 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta de PresentaciÛn</title>
+    <title>Tarjeta de Presentaci√≥n</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 20px;
             line-height: 1.6;
             background-image: url('ruta/a/tu/fondo.jpg'); /* Cambia esta ruta por la de tu imagen de fondo */
             background-size: cover;
-            color: #63290bda; /* Color cafÈ */
+            color: #4E3B31; /* Color caf√© */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         h1, h2, h3 {
-            color: #b44306; /* Color cafÈ */
+            color: #4E3B31; /* Color caf√© */
+            text-align: center;
         }
-        .contact-info, .skills, .experience, .education, .projects, .languages {
+        .section {
             margin-bottom: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
             padding: 15px;
+            border: 1px solid #4E3B31; /* Borde caf√© */
             border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
         }
         a {
-            color: #4E3B31; /* Color cafÈ para enlaces */
+            color: #4E3B31; /* Color caf√© para enlaces */
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline; /* Subrayar enlaces al pasar el mouse */
         }
+        ul {
+            list-style-type: none; /* Quitar vi√±etas */
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Freddy Espinoza</h1>
-    <h2>Licenciado en administraciÛn de empresas</h2>
+    <div class="container">
+        <h1>Nombre Apellido</h1>
+        <h2>Desarrollador de Software</h2>
 
-    <div class="contact-info">
-        <h3>InformaciÛn de Contacto</h3>
-        <p><strong>Correo ElectrÛnico:</strong> tuemail@example.com</p>
-        <p><strong>TelÈfono:</strong> +34 123 456 789</p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tu-perfil-linkedin">tu-perfil-linkedin</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/tu-usuario-github">tu-usuario-github</a></p>
-    </div>
+        <div class="section contact-info">
+            <h3>Informaci√≥n de Contacto</h3>
+            <p><strong>Correo Electr√≥nico:</strong> tuemail@example.com</p>
+            <p><strong>Tel√©fono:</strong> +34 123 456 789</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tu-perfil-linkedin">tu-perfil-linkedin</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/tu-usuario-github">tu-usuario-github</a></p>
+        </div>
 
-    <div class="summary">
-        <h3>Resumen</h3>
-        <p>Soy un desarrollador de software con experiencia en [tecnologÌas que dominas]. Me apasiona crear soluciones eficientes y efectivas.</p>
-    </div>
+        <div class="section summary">
+            <h3>Resumen</h3>
+            <p>Soy un desarrollador de software con experiencia en [tecnolog√≠as que dominas]. Me apasiona crear soluciones eficientes y efectivas.</p>
+        </div>
 
-    <div class="skills">
-        <h3>Habilidades</h3>
-        <ul>
-            <li>Lenguajes de programaciÛn: Python, JavaScript, etc.</li>
-            <li>Frameworks: React, Django, etc.</li>
-            <li>Herramientas: Git, Docker, etc.</li>
-        </ul>
-    </div>
+        <div class="section skills">
+            <h3>Habilidades</h3>
+            <ul>
+                <li>Lenguajes de programaci√≥n: Python, JavaScript, etc.</li>
+                <li>Frameworks: React, Django, etc.</li>
+                <li>Herramientas: Git, Docker, etc.</li>
+            </ul>
+        </div>
 
-    <div class="experience">
-        <h3>Experiencia</h3>
-        <p><strong>Desarrollador en Empresa XYZ</strong><br>
-        *Fecha de inicio - Fecha de fin*<br>
-        - DescripciÛn de tus responsabilidades y logros.</p>
+        <div class="section experience">
+            <h3>Experiencia</h3>
+            <p><strong>Desarrollador en Empresa XYZ</strong><br>
+            *Fecha de inicio - Fecha de fin*<br>
+            - Descripci√≥n de tus responsabilidades y logros.</p>
 
-        <p><strong>Practicante en Empresa ABC</strong><br>
-        *Fecha de inicio - Fecha de fin*<br>
-        - DescripciÛn de tus responsabilidades y logros.</p>
-    </div>
+            <p><strong>Practicante en Empresa ABC</strong><br>
+            *Fecha de inicio - Fecha de fin*<br>
+            - Descripci√≥n de tus responsabilidades y logros.</p>
+        </div>
 
-    <div class="education">
-        <h3>EducaciÛn</h3>
-        <p><strong>TÌtulo en [Tu Carrera]</strong><br>
-        *Nombre de la Universidad*<br>
-        *Fecha de inicio - Fecha de fin*</p>
-    </div>
+        <div class="section education">
+            <h3>Educaci√≥n</h3>
+            <p><strong>T√≠tulo en [Tu Carrera]</strong><br>
+            *Nombre de la Universidad*<br>
+            *Fecha de inicio - Fecha de fin*</p>
+        </div>
 
-    <div class="projects">
-        <h3>Proyectos Destacados</h3>
-        <ul>
-            <li><strong><a href="enlace-al-proyecto">Nombre del Proyecto 1</a></strong>: Breve descripciÛn del proyecto.</li>
-            <li><strong><a href="enlace-al-proyecto">Nombre del Proyecto 2</a></strong>: Breve descripciÛn del proyecto.</li>
-        </ul>
-    </div>
+        <div class="section projects">
+            <h3>Proyectos Destacados</h3>
+            <ul>
+                <li><strong><a href="enlace-al-proyecto">Nombre del Proyecto 1</a></strong>: Breve descripci√≥n del proyecto.</li>
+                <li><strong><a href="enlace-al-proyecto">Nombre del Proyecto 2</a></strong>: Breve descripci√≥n del proyecto.</li>
+            </ul>
+        </div>
 
-    <div class="languages">
-        <h3>Idiomas</h3>
-        <ul>
-            <li>EspaÒol (nativo)</li>
-            <li>InglÈs (intermedio)</li>
-        </ul>
+        <div class="section languages">
+            <h3>Idiomas</h3>
+            <ul>
+                <li>Espa√±ol (nativo)</li>
+                <li>Ingl√©s (intermedio)</li>
+            </ul>
+        </div>
     </div>
 
 </body>

@@ -9,12 +9,25 @@
             font-family: Arial, sans-serif;
             margin: 20px;
             line-height: 1.6;
+            background-image: url('ruta/a/tu/fondo.jpg'); /* Cambia esta ruta por la de tu imagen de fondo */
+            background-size: cover;
+            color: #4E3B31; /* Color café */
         }
         h1, h2, h3 {
-            color: #333;
+            color: #4E3B31; /* Color café */
         }
         .contact-info, .skills, .experience, .education, .projects, .languages {
             margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+            padding: 15px;
+            border-radius: 8px;
+        }
+        a {
+            color: #4E3B31; /* Color café para enlaces */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline; /* Subrayar enlaces al pasar el mouse */
         }
     </style>
 </head>

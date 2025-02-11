@@ -11,10 +11,10 @@
             line-height: 1.6;
             background-image: url('ruta/a/tu/fondo.jpg'); /* Cambia esta ruta por la de tu imagen de fondo */
             background-size: cover;
-            color: #4E3B31; /* Color café */
+            color: #63290bda; /* Color café */
         }
         h1, h2, h3 {
-            color: #4E3B31; /* Color café */
+            color: #b44306; /* Color café */
         }
         .contact-info, .skills, .experience, .education, .projects, .languages {
             margin-bottom: 20px;
@@ -33,8 +33,8 @@
 </head>
 <body>
 
-    <h1>Nombre Apellido</h1>
-    <h2>Desarrollador de Software</h2>
+    <h1>Freddy Espinoza</h1>
+    <h2>Licenciado en administración de empresas</h2>
 
     <div class="contact-info">
         <h3>Información de Contacto</h3>

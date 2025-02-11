@@ -10,21 +10,35 @@
             margin: 0;
             padding: 20px;
             line-height: 1.6;
-            background-image: url('ruta/a/tu/fondo.jpg'); /* Cambia esta ruta por la de tu imagen de fondo */
-            background-size: cover;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Fondo en degradado vibrante */
             color: #4E3B31; /* Color café */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
             max-width: 800px;
-            margin: auto;
             background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease; /* Transición suave */
+        }
+        .container:hover {
+            transform: scale(1.05); /* Efecto hover que amplía la tarjeta */
         }
         h1, h2, h3 {
             color: #4E3B31; /* Color café */
             text-align: center;
+        }
+        .profile-image {
+            display: block;
+            margin: 0 auto 20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Bordes redondeados */
+            border: 5px solid #4E3B31; /* Borde café */
         }
         .section {
             margin-bottom: 20px;
@@ -36,9 +50,18 @@
         a {
             color: #4E3B31; /* Color café para enlaces */
             text-decoration: none;
+            transition: color 0.3s ease; /* Transición suave para el color */
         }
         a:hover {
-            text-decoration: underline; /* Subrayar enlaces al pasar el mouse */
+            color: #ff7e5f; /* Cambia de color al pasar el mouse */
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 24px; /* Tamaño de los íconos */
         }
         ul {
             list-style-type: none; /* Quitar viñetas */
@@ -52,15 +75,18 @@
 <body>
 
     <div class="container">
+        <img src="ruta/a/tu/imagen-perfil.jpg" alt="Imagen de Perfil" class="profile-image"> <!-- Cambia esta ruta por la de tu imagen de perfil -->
         <h1>Nombre Apellido</h1>
         <h2>Desarrollador de Software</h2>
 
         <div class="section contact-info">
             <h3>Información de Contacto</h3>
-            <p><strong>Correo Electrónico:</strong> tuemail@example.com</p>
+            <p><strong>Correo Electrónico:</strong> <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
             <p><strong>Teléfono:</strong> +34 123 456 789</p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tu-perfil-linkedin">tu-perfil-linkedin</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/tu-usuario-github">tu-usuario-github</a></p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/tu-perfil-linkedin" target="_blank">🔗</a>
+                <a href="https://github.com/tu-usuario-github" target="_blank">🐱</a>
+            </div>
         </div>
 
         <div class="section summary">

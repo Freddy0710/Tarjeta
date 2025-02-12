@@ -3,67 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infograma de Estudio</title>
+    <title>Infograma: Administración y Organizaciones</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background-color: #007BFF; color: white; padding: 10px 0; text-align: center; }
-        nav { margin: 20px; }
-        nav a { margin: 0 15px; text-decoration: none; color: #007BFF; font-weight: bold; }
-        section { padding: 20px; }
-        #info { background-color: #f9f9f9; }
-        #quiz { background-color: #e9ecef; }
-        .question { margin-bottom: 20px; }
-        .hidden { display: none; }
+        body {
+            font-family: 'Courier New', Courier, monospace; /* Fuente general del cuerpo */
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f4c3, #c5e1a5); /* Fondo en degradado suave */
+            color: #333;
+        }
+        .title {
+            text-align: center; /* Centrar el texto */
+            font-size: 48px; /* Tamaño de letra grande */
+            font-weight: bold; /* Hacer la letra más gruesa */
+            color: white; /* Color de letra blanco */
+            background-color: #87CEEB; /* Fondo azul celeste */
+            padding: 20px; /* Espaciado alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
+            margin-bottom: 40px; /* Espacio debajo del título */
+        }
+        .section {
+            margin-bottom: 40px; /* Espacio debajo de cada sección */
+            padding: 20px;
+            border: 1px solid #4E3B31; /* Borde café */
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+        }
+        .intro-title {
+            text-align: center; /* Centrar el texto */
+            font-size: 32px; /* Tamaño de letra para el título de introducción */
+            font-weight: bold; /* Hacer la letra más gruesa */
+            color: white; /* Color de letra blanco */
+            background-color: #ff5656; /* Fondo rojo suave */
+            padding: 15px; /* Espaciado alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+        .intro-text {
+            text-align: center; /* Centrar el texto */
+            font-size: 20px; /* Tamaño de letra para la introducción */
+            margin-bottom: 20px; /* Espacio debajo del texto */
+        }
+        .grid {
+            display: flex; /* Usar flexbox para alinear los cuadros uno al lado del otro */
+            justify-content: space-between; /* Espacio entre los cuadros */
+            gap: 20px; /* Espacio entre los cuadros */
+        }
+        .box {
+            background: #f9f9f9; /* Fondo de los cuadros */
+            border: 1px solid #ddd; /* Borde de los cuadros */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 15px; /* Espaciado interno */
+            text-align: left; /* Alinear texto a la izquierda */
+            flex: 1; /* Hacer que los cuadros ocupen el mismo espacio */
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Infograma de Estudio</h1>
-    </header>
 
-    <nav>
-        <a href="#info">Información</a>
-        <a href="#quiz">Cuestionario</a>
-    </nav>
+    <div class="title">ADMINISTRACION Y ORGANIZACIONES</div>
 
-    <main>
-        <section id="info">
-            <h2>Información</h2>
-            <p>Aquí puedes incluir la información relevante para tu estudio. Organiza los temas y subtemas de manera clara y concisa.</p>
-            <div class="topic">
-                <h3>Tema 1: Introducción</h3>
-                <p>Descripción del tema 1...</p>
-            </div>
-            <div class="topic">
-                <h3>Tema 2: Desarrollo</h3>
-                <p>Descripción del tema 2...</p>
-            </div>
-        </section>
+    <div class="section">
+        <div class="intro-title">Introducción</div>
+        <p class="intro-text">Es un proceso fundamental para cualquier organización pública o privada, con y sin fines de lucro. Su aplicación eficiente permite alcanzar los objetivos establecidos. A lo largo de la historia se han desarrollado varias teorías y enfoques administrativos, que buscan optimizar el rendimiento y efectividad de la organización.</p>
 
-        <section id="quiz">
-            <h2>Cuestionario</h2>
-            <div class="question">
-                <p><strong>Pregunta 1:</strong> ¿Qué es...?</p>
-                <button onclick="toggleAnswer('answer1')">Mostrar Respuesta</button>
-                <p id="answer1" class="hidden">Respuesta a la pregunta 1...</p>
+        <div class="grid">
+            <div class="box">
+                <h3>Administración proviene de la siguiente unión de palabras:</h3>
+                <ul>
+                    <li>Ad = Hacia</li>
+                    <li>Minister = Subordinación</li>
+                </ul>
             </div>
-            <div class="question">
-                <p><strong>Pregunta 2:</strong> ¿Cómo se...?</p>
-                <button onclick="toggleAnswer('answer2')">Mostrar Respuesta</button>
-                <p id="answer2" class="hidden">Respuesta a la pregunta 2...</p>
+            <div class="box">
+                <h3>Diferencia Entre Organización y Empresa</h3>
+                <ul>
+                    <li>Organización: Busca cumplir objetivos</li>
+                    <li>Empresa: Busca maximizar ganancias</li>
+                </ul>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
-    <script>
-        function toggleAnswer(answerId) {
-            const answer = document.getElementById(answerId);
-            if (answer.classList.contains('hidden')) {
-                answer.classList.remove('hidden');
-            } else {
-                answer.classList.add('hidden');
-            }
-        }
-    </script>
 </body>
 </html>

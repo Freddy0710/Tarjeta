@@ -3,48 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histograma</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Infograma de Estudio</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        canvas { max-width: 600px; margin: 0 auto; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #007BFF; color: white; padding: 10px 0; text-align: center; }
+        nav { margin: 20px; }
+        nav a { margin: 0 15px; text-decoration: none; color: #007BFF; font-weight: bold; }
+        section { padding: 20px; }
+        #info { background-color: #f9f9f9; }
+        #quiz { background-color: #e9ecef; }
+        .question { margin-bottom: 20px; }
+        .hidden { display: none; }
     </style>
 </head>
 <body>
-    <h1>Histograma de Ejemplo</h1>
-    <canvas id="myHistogram"></canvas>
+    <header>
+        <h1>Infograma de Estudio</h1>
+    </header>
+
+    <nav>
+        <a href="#info">Información</a>
+        <a href="#quiz">Cuestionario</a>
+    </nav>
+
+    <main>
+        <section id="info">
+            <h2>Información</h2>
+            <p>Aquí puedes incluir la información relevante para tu estudio. Organiza los temas y subtemas de manera clara y concisa.</p>
+            <div class="topic">
+                <h3>Tema 1: Introducción</h3>
+                <p>Descripción del tema 1...</p>
+            </div>
+            <div class="topic">
+                <h3>Tema 2: Desarrollo</h3>
+                <p>Descripción del tema 2...</p>
+            </div>
+        </section>
+
+        <section id="quiz">
+            <h2>Cuestionario</h2>
+            <div class="question">
+                <p><strong>Pregunta 1:</strong> ¿Qué es...?</p>
+                <button onclick="toggleAnswer('answer1')">Mostrar Respuesta</button>
+                <p id="answer1" class="hidden">Respuesta a la pregunta 1...</p>
+            </div>
+            <div class="question">
+                <p><strong>Pregunta 2:</strong> ¿Cómo se...?</p>
+                <button onclick="toggleAnswer('answer2')">Mostrar Respuesta</button>
+                <p id="answer2" class="hidden">Respuesta a la pregunta 2...</p>
+            </div>
+        </section>
+    </main>
 
     <script>
-        // Datos de ejemplo para el histograma
-        const data = {
-            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
-            datasets: [{
-                label: 'Ventas Mensuales',
-                data: [65, 59, 80, 81, 56, 55, 40],
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-        };
-
-        // Configuración del histograma
-        const config = {
-            type: 'bar',
-            data: data,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+            } else {
+                answer.classList.add('hidden');
             }
-        };
-
-        // Renderizar el histograma
-        const myHistogram = new Chart(
-            document.getElementById('myHistogram'),
-            config
-        );
+        }
     </script>
 </body>
 </html>

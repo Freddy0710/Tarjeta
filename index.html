@@ -3,140 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta de Presentación</title>
+    <title>Histograma</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Fondo en degradado vibrante */
-            color: #4E3B31; /* Color café */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease; /* Transición suave */
-        }
-        .container:hover {
-            transform: scale(1.05); /* Efecto hover que amplía la tarjeta */
-        }
-        h1, h2, h3 {
-            color: #4E3B31; /* Color café */
-            text-align: center;
-        }
-        .profile-image {
-            display: block;
-            margin: 0 auto 20px;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%; /* Bordes redondeados */
-            border: 5px solid #4E3B31; /* Borde café */
-        }
-        .section {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #4E3B31; /* Borde café */
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
-        }
-        a {
-            color: #4E3B31; /* Color café para enlaces */
-            text-decoration: none;
-            transition: color 0.3s ease; /* Transición suave para el color */
-        }
-        a:hover {
-            color: #ff7e5f; /* Cambia de color al pasar el mouse */
-        }
-        .social-icons {
-            text-align: center;
-            margin-top: 10px;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            font-size: 24px; /* Tamaño de los íconos */
-        }
-        ul {
-            list-style-type: none; /* Quitar viñetas */
-            padding: 0;
-        }
-        li {
-            margin: 5px 0;
-        }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        canvas { max-width: 600px; margin: 0 auto; }
     </style>
 </head>
 <body>
+    <h1>Histograma de Ejemplo</h1>
+    <canvas id="myHistogram"></canvas>
 
-    <div class="container">
-        <img src="ruta/a/tu/imagen-perfil.jpg" alt="Imagen de Perfil" class="profile-image"> <!-- Cambia esta ruta por la de tu imagen de perfil -->
-        <h1>Nombre Apellido</h1>
-        <h2>Desarrollador de Software</h2>
+    <script>
+        // Datos de ejemplo para el histograma
+        const data = {
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
+            datasets: [{
+                label: 'Ventas Mensuales',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        };
 
-        <div class="section contact-info">
-            <h3>Información de Contacto</h3>
-            <p><strong>Correo Electrónico:</strong> <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
-            <p><strong>Teléfono:</strong> +34 123 456 789</p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/tu-perfil-linkedin" target="_blank">🔗</a>
-                <a href="https://github.com/tu-usuario-github" target="_blank">🐱</a>
-            </div>
-        </div>
+        // Configuración del histograma
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
 
-        <div class="section summary">
-            <h3>Resumen</h3>
-            <p>Soy un desarrollador de software con experiencia en [tecnologías que dominas]. Me apasiona crear soluciones eficientes y efectivas.</p>
-        </div>
-
-        <div class="section skills">
-            <h3>Habilidades</h3>
-            <ul>
-                <li>Lenguajes de programación: Python, JavaScript, etc.</li>
-                <li>Frameworks: React, Django, etc.</li>
-                <li>Herramientas: Git, Docker, etc.</li>
-            </ul>
-        </div>
-
-        <div class="section experience">
-            <h3>Experiencia</h3>
-            <p><strong>Desarrollador en Empresa XYZ</strong><br>
-            *Fecha de inicio - Fecha de fin*<br>
-            - Descripción de tus responsabilidades y logros.</p>
-
-            <p><strong>Practicante en Empresa ABC</strong><br>
-            *Fecha de inicio - Fecha de fin*<br>
-            - Descripción de tus responsabilidades y logros.</p>
-        </div>
-
-        <div class="section education">
-            <h3>Educación</h3>
-            <p><strong>Título en [Tu Carrera]</strong><br>
-            *Nombre de la Universidad*<br>
-            *Fecha de inicio - Fecha de fin*</p>
-        </div>
-
-        <div class="section projects">
-            <h3>Proyectos Destacados</h3>
-            <ul>
-                <li><strong><a href="enlace-al-proyecto">Nombre del Proyecto 1</a></strong>: Breve descripción del proyecto.</li>
-                <li><strong><a href="enlace-al-proyecto">Nombre del Proyecto 2</a></strong>: Breve descripción del proyecto.</li>
-            </ul>
-        </div>
-
-        <div class="section languages">
-            <h3>Idiomas</h3>
-            <ul>
-                <li>Español (nativo)</li>
-                <li>Inglés (intermedio)</li>
-            </ul>
-        </div>
-    </div>
-
+        // Renderizar el histograma
+        const myHistogram = new Chart(
+            document.getElementById('myHistogram'),
+            config
+        );
+    </script>
 </body>
 </html>

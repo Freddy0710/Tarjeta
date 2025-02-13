@@ -24,13 +24,47 @@
         }
         .section {
             margin-bottom: 40px; /* Espacio debajo de cada sección */
-            padding: 20px; /* Aumentar el padding para hacer el cuadro más grande */
+            padding: 20px;
             border: 1px solid #4E3B31; /* Borde café */
             border-radius: 8px;
             background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
-            max-width: 1200px; /* Ancho máximo del contenedor */
-            margin: 0 auto; /* Centrar el contenedor */
-            min-height: 300px; /* Altura mínima para hacer el cuadro más corto */
+        }
+        .intro-title, .definition-title {
+            text-align: center; /* Centrar el texto */
+            font-size: 32px; /* Tamaño de letra para el título de introducción */
+            font-weight: bold; /* Hacer la letra más gruesa */
+            color: white; /* Color de letra blanco */
+            background-color: #FF7F7F; /* Fondo rojo suave */
+            padding: 15px; /* Espaciado alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+        .intro-text, .definition-text {
+            text-align: center; /* Centrar el texto */
+            font-size: 20px; /* Tamaño de letra para la introducción */
+            margin-bottom: 20px; /* Espacio debajo del texto */
+        }
+        .grid {
+            display: flex; /* Usar flexbox para alinear los cuadros uno al lado del otro */
+            justify-content: space-between; /* Espacio entre los cuadros */
+            gap: 20px; /* Espacio entre los cuadros */
+        }
+        .box {
+            background: #f9f9f9; /* Fondo de los cuadros */
+            border: 1px solid #ddd; /* Borde de los cuadros */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 15px; /* Espaciado interno */
+            text-align: left; /* Alinear texto a la izquierda */
+            flex: 1; /* Hacer que los cuadros ocupen el mismo espacio */
+        }
+        .nature-title {
+            color: blue; /* Color azul para el subtítulo de naturaleza */
+            font-weight: bold; /* Negrita para el subtítulo */
+            font-size: 24px; /* Tamaño de letra para el subtítulo */
+            margin-bottom: 10px; /* Espacio debajo del subtítulo */
+        }
+        .sub-title {
+            font-weight: bold; /* Negrita para los subtítulos dentro del cuadro */
         }
         .theories-title {
             text-align: center; /* Centrar el texto */
@@ -109,6 +143,44 @@
 <body>
 
     <div class="title">ADMINISTRACION Y ORGANIZACIONES</div>
+
+    <div class="section">
+        <div class="intro-title">Introducción</div>
+        <p class="intro-text">Es un proceso fundamental para cualquier organización pública o privada, con y sin fines de lucro. Su aplicación eficiente permite alcanzar los objetivos establecidos. A lo largo de la historia se han desarrollado varias teorías y enfoques administrativos, que buscan optimizar el rendimiento y efectividad de la organización.</p>
+
+        <div class="grid">
+            <div class="box">
+                <h3>Administración proviene de la siguiente unión de palabras:</h3>
+                <ul>
+                    <li>Ad = Hacia</li>
+                    <li>Minister = Subordinación</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>Diferencia Entre Organización y Empresa</h3>
+                <ul>
+                    <li>Organización: Busca cumplir objetivos</li>
+                    <li>Empresa: Busca maximizar ganancias</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="definition-title">DEFINICION Y NATURALEZA</div>
+        <p class="definition-text">Henry Fayol: “preveer, organizar, mandar, coordinar y controlar”</p>
+        <p class="definition-text"><span class="sub-title">Komt’s y Odonel:</span> “dirección de un organismo social, y su efectividad para alcanzar los objetivos, basados en la habilidad de conducir a sus integrantes”</p>
+        <p class="definition-text">En resumen, administrar no son únicamente planificar, organizar, dirigir y controlar, sino es marcar un conjunto de decisiones y acciones que se apliquen en varias situaciones de la organización.</p>
+
+        <div class="box">
+            <div class="nature-title">NATURALEZA</div>
+            <ul>
+                <li><span class="sub-title">Ciencia:</span> Análisis dinámico de situaciones para la toma de decisiones</li>
+                <li><span class="sub-title">Arte:</span> Involucra la visión, creatividad y habilidad para guiar y motivar al equipo</li>
+                <li><span class="sub-title">Tecnología:</span> Implementación de procedimientos, prácticos operacionales y específicos</li>
+            </ul>
+        </div>
+    </div>
 
     <div class="section">
         <div class="theories-title">PRINCIPALES TEORIAS DE LA ADMINISTRACION</div>

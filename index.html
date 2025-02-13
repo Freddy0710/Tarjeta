@@ -63,17 +63,6 @@
         .card:hover {
             opacity: 1; /* Opacidad completa al pasar el mouse */
         }
-        .card img {
-            max-width: 100%; /* Imagen ajustada al ancho de la carta */
-            border-radius: 8px; /* Bordes redondeados para la imagen */
-        }
-        .card h4 {
-            margin: 10px 0 5px; /* Espaciado para el nombre del autor */
-            font-weight: bold; /* Negrita para el nombre del autor */
-        }
-        .card p {
-            margin: 5px 0; /* Espaciado para los párrafos */
-        }
         .button {
             background-color: #FF7F7F; /* Color del botón */
             color: white; /* Color del texto del botón */
@@ -150,35 +139,25 @@
                 </div>
             </div>
         </div>
-
-        <button class="button" onclick="prevCard()">Anterior</button>
-        <button class="button" onclick="nextCard()">Siguiente</button>
     </div>
 
     <script>
         let currentIndex = 0;
+        const totalCards = document.querySelectorAll('.card').length;
 
         function updateCarousel() {
             const cardContainer = document.getElementById('cardContainer');
-            const cards = document.querySelectorAll('.card');
-            const totalCards = cards.length;
-
-            // Calcular el desplazamiento
             const offset = -currentIndex * (220); // 200px de ancho + 20px de margen
             cardContainer.style.transform = `translateX(${offset}px)`;
         }
 
         function nextCard() {
-            const totalCards = document.querySelectorAll('.card').length;
             currentIndex = (currentIndex + 1) % totalCards; // Aumentar el índice y volver al inicio si es necesario
             updateCarousel();
         }
 
-        function prevCard() {
-            const totalCards = document.querySelectorAll('.card').length;
-            currentIndex = (currentIndex - 1 + totalCards) % totalCards; // Disminuir el índice y volver al final si es necesario
-            updateCarousel();
-        }
+        // Cambiar automáticamente cada 3 segundos
+        setInterval(nextCard, 3000);
     </script>
 
 </body>

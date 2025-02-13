@@ -46,7 +46,7 @@
             border-radius: 8px;
             background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
         }
-        .intro-title, .definition-title, .theories-title {
+        .intro-title, .definition-title {
             text-align: center; /* Centrar el texto */
             font-size: 32px; /* Tamaño de letra para el título de introducción */
             font-weight: bold; /* Hacer la letra más gruesa */
@@ -74,31 +74,107 @@
             text-align: left; /* Alinear texto a la izquierda */
             flex: 1; /* Hacer que los cuadros ocupen el mismo espacio */
         }
-        .carousel {
-            display: flex; /* Usar flexbox para el carrusel */
-            overflow: hidden; /* Ocultar el contenido que sobresale */
-            position: relative; /* Para posicionar los botones */
+        .nature-title {
+            color: blue; /* Color azul para el subtítulo de naturaleza */
+            font-weight: bold; /* Negrita para el subtítulo */
+            font-size: 24px; /* Tamaño de letra para el subtítulo */
+            margin-bottom: 10px; /* Espacio debajo del subtítulo */
         }
-        .carousel-inner {
-            display: flex; /* Usar flexbox para alinear las tarjetas en fila */
-            transition: transform 0.5s ease; /* Transición suave para el movimiento */
-            will-change: transform; /* Mejora el rendimiento */
+        .sub-title {
+            font-weight: bold; /* Negrita para los subtítulos dentro del cuadro */
         }
-        .carousel-button {
-            position: absolute; /* Posicionar los botones */
-            top: 50%; /* Centrar verticalmente */
-            transform: translateY(-50%); /* Ajustar la posición */
-            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
-            border: none; /* Sin borde */
-            border-radius: 5px; /* Bordes redondeados */
-            padding: 10px; /* Espaciado interno */
-            cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+        .theories-title {
+            text-align: center; /* Centrar el texto */
+            font-size: 32px; /* Tamaño de letra para el título de teorías */
+            font-weight: bold; /* Hacer la letra más gruesa */
+            color: white; /* Color de letra blanco */
+            background-color: #007BFF; /* Fondo celeste oscuro */
+            padding: 15px; /* Espaciado alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
+            margin-bottom: 20px; /* Espacio debajo del título */
         }
-        .prev {
-            left: 10px; /* Posición del botón anterior */
+        .container {
+            display: flex; /* Usar flexbox para alinear las partes */
+            flex-direction: column; /* Alinear en columna */
+            align-items: center; /* Centrar las tarjetas */
         }
-        .next {
-            right: 10px; /* Posición del botón siguiente */
+        .card-group {
+            display: flex; /* Usar flexbox para las tarjetas en cada grupo */
+            justify-content: space-between; /* Espacio entre tarjetas */
+            width: 90%; /* Ancho del grupo de tarjetas */
+            margin: 10px 0; /* Espacio entre grupos */
+        }
+        .card {
+            display: flex; /* Usar flexbox para la tarjeta */
+            background: #f9f9f9; /* Fondo de las cartas */
+            border: 1px solid #ddd; /* Borde de las cartas */
+            border-radius: 8px; /* Bordes redondeados */
+            width: 100%; /* Ancho de la tarjeta */
+            margin: 10px; /* Espacio entre tarjetas */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+            user-select: text; /* Permitir selección de texto */
+        }
+        .card:hover {
+            background-color: #ADD8E6; /* Color celeste claro al pasar el cursor */
+            cursor: pointer; /* Cambiar cursor al pasar sobre la tarjeta */
+        }
+        .card img {
+            width: 150px; /* Ancho de la imagen */
+            height: 150px; /* Altura de la imagen */
+            border-radius: 50%; /* Hacer la imagen ovalada */
+            margin-right: 10px; /* Espacio entre la imagen y el contenido */
+        }
+        .card-content {
+            padding: 10px; /* Espaciado interno para el contenido de la tarjeta */
+            flex-grow: 1; /* Permitir que el contenido crezca */
+        }
+        .card-content h4 {
+            color: #003366; /* Azul marino claro para el título */
+            margin: 0; /* Sin margen */
+            text-align: center; /* Centrar el subtítulo */
+        }
+        .card-content p {
+            margin: 5px 0; /* Margen entre párrafos */
+        }
+        .card-content strong {
+            color: #003366; /* Azul marino claro para los títulos de sección */
+            background-color: #e0f7fa; /* Fondo suave */
+            padding: 2px 4px; /* Espaciado interno */
+            border-radius: 4px; /* Bordes redondeados */
+        }
+        .author-name {
+            text-align: center; /* Centrar el nombre del autor */
+            margin-top: 5px; /* Espacio arriba del nombre */
+            font-weight: bold; /* Negrita para el nombre */
+            color: #003366; /* Azul marino claro para el nombre */
+        }
+        .column-title {
+            text-align: center; /* Centrar el texto del título de la columna */
+            font-weight: bold; /* Negrita para el título */
+            margin-bottom: 10px; /* Espacio debajo del título */
+            color: #333; /* Color del texto */
+        }
+        .example-title {
+            text-align: center; /* Centrar el texto */
+            font-size: 28px; /* Tamaño de letra para el título de ejemplo */
+            font-weight: bold; /* Hacer la letra más gruesa */
+            color: #003366; /* Color azul marino claro */
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+        .pathway {
+            text-align: center; /* Centrar el camino */
+            margin: 20px 0; /* Espacio arriba y abajo */
+        }
+        img {
+            width: 100%; /* Ancho de la imagen */
+            max-width: 700px; /* Ancho máximo de la imagen */
+            height: auto; /* Altura automática para mantener la proporción */
+            border-radius: 8px; /* Bordes redondeados */
+            transition: transform 0.3s; /* Transición suave para el efecto de agrandamiento */
+        }
+        img:hover {
+            transform: scale(1.05); /* Agrandar la imagen al pasar el cursor */
         }
     </style>
 </head>
@@ -113,64 +189,209 @@
 
     <div class="section" id="teoria">
         <div class="intro-title">Introducción</div>
-        <p class="intro-text">Aquí va la introducción sobre administración y organizaciones.</p>
+        <p class="intro-text">Es un proceso fundamental para cualquier organización pública o privada, con y sin fines de lucro. Su aplicación eficiente permite alcanzar los objetivos establecidos. A lo largo de la historia se han desarrollado varias teorías y enfoques administrativos, que buscan optimizar el rendimiento y efectividad de la organización.</p>
+
+        <div class="grid">
+            <div class="box">
+                <h3>Administración proviene de la siguiente unión de palabras:</h3>
+                <ul>
+                    <li>Ad = Hacia</li>
+                    <li>Minister = Subordinación</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>Diferencia Entre Organización y Empresa</h3>
+                <ul>
+                    <li>Organización: Busca cumplir objetivos</li>
+                    <li>Empresa: Busca maximizar ganancias</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="section">
         <div class="definition-title">DEFINICION Y NATURALEZA</div>
-        <p class="definition-text">Aquí va la definición y naturaleza de la administración.</p>
+        <p class="definition-text">Henry Fayol: “preveer, organizar, mandar, coordinar y controlar”</p>
+        <p class="definition-text"><span class="sub-title">Komt’s y Odonel:</span> “dirección de un organismo social, y su efectividad para alcanzar los objetivos, basados en la habilidad de conducir a sus integrantes”</p>
+        <p class="definition-text">En resumen, administrar no son únicamente planificar, organizar, dirigir y controlar, sino es marcar un conjunto de decisiones y acciones que se apliquen en varias situaciones de la organización.</p>
+
+        <div class="box">
+            <div class="nature-title">NATURALEZA</div>
+            <ul>
+                <li><span class="sub-title">Ciencia:</span> Análisis dinámico de situaciones para la toma de decisiones</li>
+                <li><span class="sub-title">Arte:</span> Involucra la visión, creatividad y habilidad para guiar y motivar al equipo</li>
+                <li><span class="sub-title">Tecnología:</span> Implementación de procedimientos, prácticos operacionales y específicos</li>
+            </ul>
+        </div>
     </div>
 
     <div class="section">
         <div class="theories-title">PRINCIPALES TEORIAS DE LA ADMINISTRACION</div>
+
         <div class="container">
+            <!-- Primer grupo -->
             <div class="column-title">ENFOQUE CLASICO</div>
             <div class="card-group">
                 <div class="card">
-                    <img src="adm/taylor.jpg" alt="Frederick Taylor">
+                    <img src="adm/taylor.jpg" alt="Frederick Taylor"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <div class="card-content">
                         <h4>ADMINISTRACION CIENTIFICA</h4>
-                        <p>Aquí va la descripción de la administración científica.</p>
+                        <p><strong>Autor:</strong> Frederick Taylor</p>
+                        <p><strong>Concepto:</strong> Se basa en la racionalización del trabajo para aumentar la eficiencia y la productividad mediante métodos científicos.</p>
+                        <p><strong>Teoría:</strong><br>
+                        - Planificación: Uso de procedimientos científicos en lugar de improvisación.<br>
+                        - Preparación: Selección y formación de trabajadores.<br>
+                        - Control: Supervisión constante para garantizar estándares.<br>
+                        - Ejecución: División clara entre planeación y ejecución.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="adm/fayol.jpg" alt="Henri Fayol">
+                    <img src="adm/fayol.jpg" alt="Henri Fayol"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <div class="card-content">
                         <h4>TEORIA DEL PROCESO ADMINISTRATIVO</h4>
-                        <p>Aquí va la descripción de la teoría del proceso administrativo.</p>
+                        <p><strong>Autor:</strong> Henri Fayol</p>
+                        <p><strong>Concepto:</strong> La administración es un proceso basado en principios generales aplicables a cualquier organización.</p>
+                        <p><strong>Teoría:</strong><br>
+                        14 principios administrativos, entre ellos: División del trabajo, Autoridad, Unidad de mando, Jerarquía y Coordinación.</p>
+                        <p><strong>Principio:</strong> 5 funciones del directivo: Planificación, Organización, Coordinación, Dirección y Control.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-group">
+                <div class="card">
+                    <img src="adm/weber.jpg" alt="Max Weber"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>TEORIA BUROCRATICA</h4>
+                        <p><strong>Autor:</strong> Max Weber</p>
+                        <p><strong>Concepto:</strong> Plantea la burocracia como una estructura organizacional basada en normas, jerarquía y división del trabajo.</p>
+                        <p><strong>Teoría:</strong><br>
+                        3 tipos de autoridad:<br>
+                        1. Tradicional: Basada en costumbre y herencia.<br>
+                        2. Carismática: Basada en las cualidades del líder.<br>
+                        3. Racional legal: Basada en normas y procedimientos.</p>
+                        <p><strong>Principio:</strong> Jerarquía, reglas escritas, profesionalización y separación entre propiedad y administración.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Segundo grupo -->
+            <div class="column-title">ENFOQUE DEL COMPORTAMIENTO</div>
+            <div class="card-group">
+                <div class="card">
+                    <img src="adm/mayo.jpg" alt="Elton Mayo"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>RELACIONES HUMANAS</h4>
+                        <p><strong>Autor:</strong> Elton Mayo</p>
+                        <p><strong>Concepto:</strong> Introduce la importancia de los factores sociales y psicológicos en la productividad.</p>
+                        <p><strong>Teoría:</strong><br>
+                        Estudios de Hawthorne: Motivación influenciada por relaciones humanas y condiciones sociales.</p>
+                        <p><strong>Principio:</strong> No hay principios</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="adm/maslow.jpg" alt="Abraham Maslow"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>TEORIA DE LA MOTIVACION</h4>
+                        <p><strong>Autor:</strong> Abraham Maslow</p>
+                        <p><strong>Concepto:</strong> La motivación se basa en una jerarquía de necesidades humanas.</p>
+                        <p><strong>Teoría:</strong><br>
+                        Pirámide de Maslow: Fisiológicas, Seguridad, Sociales, Estima y Autorrealización.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Tercer grupo -->
+            <div class="column-title">ENFOQUE MODERNO</div>
+            <div class="card-group">
+                <div class="card">
+                    <img src="adm/von.jpg" alt="Ludwig von Bertalanffy"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>ENFOQUE DE SISTEMAS</h4>
+                        <p><strong>Autor:</strong> Ludwig von Bertalanffy</p>
+                        <p><strong>Concepto:</strong> La organización es un sistema abierto que interactúa con su entorno.</p>
+                        <p><strong>Teoría:</strong><br>
+                        Elementos del sistema: Entrada, Proceso, Salida, Retroalimentación y Ambiente.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="adm/contingencial.jpg" alt="Enfoque Contingencial"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>ENFOQUE CONTINGENCIAL</h4>
+                        <p><strong>Autor:</strong> Paul Lawrence, Jay Lorsch, Joan Woodward.</p>
+                        <p><strong>Concepto:</strong> No hay una única forma de administrar; la estructura debe adaptarse al contexto.</p>
+                        <p><strong>Teoría:</strong><br>
+                        - Variables clave:<br>
+                        1. Ambiente: Estable o inestable.<br>
+                        2. Tecnología: Impacta la estructura organizativa.<br>
+                        3. Estructura organizativa: Debe ajustarse a condiciones externas.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="section" id="cuestionario">
-        <div class="intro-title">CUESTIONARIO</div>
-        <p class="intro-text">Aquí puedes agregar tu cuestionario de preguntas y respuestas.</p>
-        <div class="carousel" id="carousel">
-            <div class="carousel-inner" id="carouselInner">
-                <div class="card question">
-                    <h4>Pregunta 1</h4>
-                </div>
-                <div class="card answer">
-                    <p>Respuesta 1</p>
-                </div>
-                <div class="card question">
-                    <h4>Pregunta 2</h4>
-                </div>
-                <div class="card answer">
-                    <p>Respuesta 2</p>
-                </div>
-                <!-- Agregar más preguntas y respuestas aquí -->
+    <div class="section">
+        <div class="intro-title">PROCESO DE GESTION EMPRESARIAL</div>
+        <p class="intro-text">El proceso de gestión empresarial es fundamental para el éxito de cualquier organización. Este proceso implica una serie de etapas que permiten planificar, organizar, dirigir y controlar los recursos de manera eficiente.</p>
+
+        <div class="pathway">
+            <img src="adm/proceso.png" alt="Diagrama del Proceso de Gestión"> <!-- Imagen del proceso -->
+        </div>
+
+        <div class="example-title">EJEMPLO</div> <!-- Encabezado del plano cartesiano -->
+
+        <div class="grid">
+            <div class="box">
+                <div class="sub-title">Planificación:</div>
+                <ul>
+                    <li>Plan a corto plazo: POA (1 año)</li>
+                    <li>Plan a mediano plazo: Plan Estratégico Institucional (5 Años)</li>
+                    <li>Plan a largo plazo: Plan Integral de La Paz (2040)</li>
+                </ul>
             </div>
-            <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+            <div class="box">
+                <div class="sub-title">Organización:</div>
+                <ul>
+                    <li>Unidad que lo implementa: Dirección de Gobierno Electrónico y Modernización a través de la Unidad de Desarrollo, Organización y Mejora Continua</li>
+                    <li>Estructura organizativa</li>
+                    <li>Manual de Organizaciones y Funciones</li>
+                    <li>Manual de Procesos y Procedimientos</li>
+                </ul>
+            </div>
+            <div class="box">
+                <div class="sub-title">Dirección:</div>
+                <ul>
+                    <li>Unidad que la implementa: Despacho del Alcalde Municipal a través de sus funciones (MAE de la Unidad Organizacional)</li>
+                </ul>
+            </div>
+            <div class="box">
+                <div class="sub-title">Control:</div>
+                <ul>
+                    <li>Unidad que lo implementa: Secretaría Municipal de Planificación para el Desarrollo y Secretaría Municipal de Finanzas, y la Unidad de Auditoría Interna</li>
+                    <li>Implementa realizando seguimiento a la ejecución del POA, y a la ejecución del presupuesto realizando evaluaciones cuatrimestrales</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Importancia de la Gestión Empresarial</h3>
+            <ul>
+                <li>Mejora la eficiencia operativa.</li>
+                <li>Facilita la toma de decisiones.</li>
+                <li>Permite adaptarse a cambios del entorno.</li>
+                <li>Fomenta la innovación y el crecimiento.</li>
+            </ul>
         </div>
     </div>
 
-    <script>
-        // Aquí va el código JavaScript para el carrusel
-    </script>
-
+   
 </body>
 </html>

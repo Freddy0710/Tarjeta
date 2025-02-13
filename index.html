@@ -4,7 +4,7 @@
 
     <div class="card-group">
         <div class="card" onclick="this.classList.toggle('flipped')">
-            <div class="card-content">
+            <div class="card-content front">
                 <h4>1. ¿Qué es la tecnología?</h4>
             </div>
             <div class="card-content back">
@@ -13,7 +13,7 @@
         </div>
 
         <div class="card" onclick="this.classList.toggle('flipped')">
-            <div class="card-content">
+            <div class="card-content front">
                 <h4>2. ¿Para qué sirve la organización en la administración?</h4>
             </div>
             <div class="card-content back">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="card" onclick="this.classList.toggle('flipped')">
-            <div class="card-content">
+            <div class="card-content front">
                 <h4>3. Diferencia de división de trabajo horizontal y trabajo vertical</h4>
             </div>
             <div class="card-content back">
@@ -56,27 +56,27 @@
         transition: transform 0.3s; /* Transición suave para el efecto de agrandamiento */
         cursor: pointer; /* Cambiar cursor al pasar sobre la tarjeta */
         position: relative; /* Para el efecto de volteo */
+        overflow: hidden; /* Para ocultar el contenido que sobresale */
     }
     .card-content {
         padding: 15px; /* Espaciado interno */
         text-align: left; /* Alinear texto a la izquierda */
-    }
-    .card-content.back {
-        display: none; /* Ocultar la parte de respuesta inicialmente */
+        backface-visibility: hidden; /* Ocultar el reverso cuando no está volteado */
         position: absolute; /* Para superponer la respuesta */
         top: 0; /* Alinear al inicio */
         left: 0; /* Alinear al inicio */
         right: 0; /* Alinear al inicio */
         bottom: 0; /* Alinear al inicio */
-        background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
         border-radius: 8px; /* Bordes redondeados */
-        padding: 15px; /* Espaciado interno */
-        z-index: 1; /* Asegurarse de que esté por encima */
     }
-    .card.flipped .card-content {
+    .card-content.back {
+        background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+        transform: rotateY(180deg); /* Voltear el reverso */
+    }
+    .card.flipped .front {
         display: none; /* Ocultar la parte de pregunta cuando está volteada */
     }
-    .card.flipped .card-content.back {
+    .card.flipped .back {
         display: block; /* Mostrar la parte de respuesta cuando está volteada */
     }
 </style>

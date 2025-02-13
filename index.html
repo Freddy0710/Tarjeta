@@ -67,12 +67,13 @@
             opacity: 0; /* Inicialmente oculto */
             transition: opacity 0.5s ease, background-color 0.3s; /* Transición suave para la opacidad y el color de fondo */
             position: absolute; /* Posición absoluta para superponer cartas */
+            user-select: text; /* Permitir selección de texto */
         }
         .card.active {
             opacity: 1; /* Mostrar la carta activa */
         }
         .card:hover {
-            background-color: #e0e0e0; /* Color más oscuro al pasar el cursor */
+            background-color: #ADD8E6; /* Color celeste claro al pasar el cursor */
             cursor: pointer; /* Cambiar cursor al pasar sobre la tarjeta */
         }
         .card img {

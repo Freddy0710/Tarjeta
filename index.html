@@ -38,13 +38,6 @@
             text-align: center; /* Centrar el camino */
             margin: 20px 0; /* Espacio arriba y abajo */
         }
-        .steps {
-            list-style-type: none; /* Sin viñetas */
-            padding: 0; /* Sin padding */
-            display: flex; /* Usar flexbox para alinear horizontalmente */
-            justify-content: center; /* Centrar los elementos */
-            align-items: center; /* Alinear verticalmente */
-        }
         .grid {
             display: flex; /* Usar flexbox para alinear los cuadros uno al lado del otro */
             justify-content: space-between; /* Espacio entre los cuadros */
@@ -63,8 +56,13 @@
         }
         img {
             width: 100%; /* Ancho de la imagen */
-            max-width: 600px; /* Ancho máximo de la imagen */
+            max-width: 700px; /* Ancho máximo de la imagen (ajustado) */
+            height: auto; /* Altura automática para mantener la proporción */
             border-radius: 8px; /* Bordes redondeados */
+            transition: transform 0.3s; /* Transición suave para el efecto de agrandamiento */
+        }
+        img:hover {
+            transform: scale(1.05); /* Agrandar la imagen al pasar el cursor */
         }
     </style>
 </head>
@@ -75,16 +73,16 @@
         <p class="intro-text">El proceso de gestión empresarial es fundamental para el éxito de cualquier organización. Este proceso implica una serie de etapas que permiten planificar, organizar, dirigir y controlar los recursos de manera eficiente.</p>
 
         <div class="pathway">
-            <img src="adm/proceso.png" alt="Diagrama del Proceso de Gestión" style="width: 100%; max-width: 600px; border-radius: 8px;"> <!-- Imagen del proceso -->
+            <img src="adm/proceso.png" alt="Diagrama del Proceso de Gestión"> <!-- Imagen del proceso -->
         </div>
 
         <div class="box">
             <h3>Ejemplos</h3>
             <ul>
-                <li>Ejemplo de Planificación.</li>
-                <li>Ejemplo de Organización.</li>
-                <li>Ejemplo de Dirección.</li>
-                <li>Ejemplo de Control.</li>
+                <li>Planificación.</li>
+                <li>Organización.</li>
+                <li>Dirección.</li>
+                <li>Control.</li>
             </ul>
         </div>
 

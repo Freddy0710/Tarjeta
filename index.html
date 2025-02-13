@@ -47,13 +47,19 @@
             flex-direction: column; /* Alinear en columna */
             align-items: center; /* Centrar las tarjetas */
         }
+        .card-group {
+            display: flex; /* Usar flexbox para las tarjetas en cada grupo */
+            justify-content: space-between; /* Espacio entre tarjetas */
+            width: 90%; /* Ancho del grupo de tarjetas */
+            margin: 10px 0; /* Espacio entre grupos */
+        }
         .card {
             display: flex; /* Usar flexbox para la tarjeta */
             background: #f9f9f9; /* Fondo de las cartas */
             border: 1px solid #ddd; /* Borde de las cartas */
             border-radius: 8px; /* Bordes redondeados */
-            width: 90%; /* Ancho de la tarjeta */
-            margin: 10px 0; /* Espacio entre tarjetas */
+            width: 48%; /* Ancho de la tarjeta */
+            margin: 10px; /* Espacio entre tarjetas */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
             transition: background-color 0.3s; /* Transición suave para el color de fondo */
             user-select: text; /* Permitir selección de texto */
@@ -64,12 +70,26 @@
         }
         .card img {
             width: 150px; /* Ancho de la imagen */
-            height: auto; /* Altura automática para mantener la proporción */
-            border-radius: 8px 0 0 8px; /* Bordes redondeados para la imagen */
+            height: 150px; /* Altura de la imagen */
+            border-radius: 50%; /* Hacer la imagen ovalada */
+            margin-right: 10px; /* Espacio entre la imagen y el contenido */
         }
         .card-content {
             padding: 10px; /* Espaciado interno para el contenido de la tarjeta */
             flex-grow: 1; /* Permitir que el contenido crezca */
+        }
+        .card-content h4 {
+            color: #003366; /* Azul marino claro para el título */
+            margin: 0; /* Sin margen */
+        }
+        .card-content p {
+            margin: 5px 0; /* Margen entre párrafos */
+        }
+        .card-content strong {
+            color: #003366; /* Azul marino claro para los títulos de sección */
+            background-color: #e0f7fa; /* Fondo suave */
+            padding: 2px 4px; /* Espaciado interno */
+            border-radius: 4px; /* Bordes redondeados */
         }
         .button-container {
             text-align: center; /* Centrar los botones */
@@ -84,12 +104,6 @@
             cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
             margin: 5px; /* Espacio alrededor del botón */
         }
-        .column-title {
-            text-align: center; /* Centrar el texto del título de la columna */
-            font-weight: bold; /* Negrita para el título */
-            margin-bottom: 10px; /* Espacio debajo del título */
-            color: #333; /* Color del texto */
-        }
     </style>
 </head>
 <body>
@@ -101,95 +115,102 @@
 
         <div class="container">
             <!-- Primer grupo -->
-            <div class="column-title">ENFOQUE CLASICO</div>
-            <div class="card">
-                <img src="adm/taylor.jpg" alt="Frederick Taylor"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <div class="card-content">
-                    <h4>Frederick Taylor (1856-1915)</h4>
-                    <p><strong>Concepto:</strong> Se basa en la racionalización del trabajo para aumentar la eficiencia y la productividad mediante métodos científicos.</p>
-                    <p><strong>Teoría:</strong><br>
-                    - Planificación: Uso de procedimientos científicos en lugar de improvisación.<br>
-                    - Preparación: Selección y formación de trabajadores.<br>
-                    - Control: Supervisión constante para garantizar estándares.<br>
-                    - Ejecución: División clara entre planeación y ejecución.</p>
-                    <p><strong>Principio:</strong> No hay principio</p>
+            <div class="card-group">
+                <div class="card">
+                    <img src="adm/taylor.jpg" alt="Frederick Taylor"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>Frederick Taylor (1856-1915)</h4>
+                        <p><strong>Concepto:</strong> Se basa en la racionalización del trabajo para aumentar la eficiencia y la productividad mediante métodos científicos.</p>
+                        <p><strong>Teoría:</strong><br>
+                        - Planificación: Uso de procedimientos científicos en lugar de improvisación.<br>
+                        - Preparación: Selección y formación de trabajadores.<br>
+                        - Control: Supervisión constante para garantizar estándares.<br>
+                        - Ejecución: División clara entre planeación y ejecución.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="adm/fayol.jpg" alt="Henri Fayol"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>Henri Fayol (1841-1925)</h4>
+                        <p><strong>Concepto:</strong> La administración es un proceso basado en principios generales aplicables a cualquier organización.</p>
+                        <p><strong>Teoría:</strong><br>
+                        14 principios administrativos, entre ellos: División del trabajo, Autoridad, Unidad de mando, Jerarquía y Coordinación.</p>
+                        <p><strong>Principio:</strong> 5 funciones del directivo: Planificación, Organización, Coordinación, Dirección y Control.</p>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="adm/fayol.jpg" alt="Henri Fayol"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <div class="card-content">
-                    <h4>Henri Fayol (1841-1925)</h4>
-                    <p><strong>Concepto:</strong> La administración es un proceso basado en principios generales aplicables a cualquier organización.</p>
-                    <p><strong>Teoría:</strong><br>
-                    14 principios administrativos, entre ellos: División del trabajo, Autoridad, Unidad de mando, Jerarquía y Coordinación.</p>
-                    <p><strong>Principio:</strong> 5 funciones del directivo: Planificación, Organización, Coordinación, Dirección y Control.</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="adm/weber.jpg" alt="Max Weber"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <div class="card-content">
-                    <h4>Max Weber (1864-1920)</h4>
-                    <p><strong>Concepto:</strong> Plantea la burocracia como una estructura organizacional basada en normas, jerarquía y división del trabajo.</p>
-                    <p><strong>Teoría:</strong><br>
-                    3 tipos de autoridad:<br>
-                    1. Tradicional: Basada en costumbre y herencia.<br>
-                    2. Carismática: Basada en las cualidades del líder.<br>
-                    3. Racional legal: Basada en normas y procedimientos.</p>
-                    <p><strong>Principio:</strong> Jerarquía, reglas escritas, profesionalización y separación entre propiedad y administración.</p>
+            <div class="card-group">
+                <div class="card">
+                    <img src="adm/weber.jpg" alt="Max Weber"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>Max Weber (1864-1920)</h4>
+                        <p><strong>Concepto:</strong> Plantea la burocracia como una estructura organizacional basada en normas, jerarquía y división del trabajo.</p>
+                        <p><strong>Teoría:</strong><br>
+                        3 tipos de autoridad:<br>
+                        1. Tradicional: Basada en costumbre y herencia.<br>
+                        2. Carismática: Basada en las cualidades del líder.<br>
+                        3. Racional legal: Basada en normas y procedimientos.</p>
+                        <p><strong>Principio:</strong> Jerarquía, reglas escritas, profesionalización y separación entre propiedad y administración.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="container">
             <!-- Segundo grupo -->
-            <div class="column-title">ENFOQUE DEL COMPORTAMIENTO</div>
-            <div class="card">
-                <img src="adm/mayo.jpg" alt="Elton Mayo"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <div class="card-content">
-                    <h4>Elton Mayo (1880-1949)</h4>
-                    <p><strong>Concepto:</strong> Introduce la importancia de los factores sociales y psicológicos en la productividad.</p>
-                    <p><strong>Teoría:</strong><br>
-                    Estudios de Hawthorne: Motivación influenciada por relaciones humanas y condiciones sociales.</p>
-                    <p><strong>Principio:</strong> No hay principios</p>
+            <div class="card-group">
+                <div class="column-title">ENFOQUE DEL COMPORTAMIENTO</div>
+                <div class="card">
+                    <img src="adm/mayo.jpg" alt="Elton Mayo"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>Elton Mayo (1880-1949)</h4>
+                        <p><strong>Concepto:</strong> Introduce la importancia de los factores sociales y psicológicos en la productividad.</p>
+                        <p><strong>Teoría:</strong><br>
+                        Estudios de Hawthorne: Motivación influenciada por relaciones humanas y condiciones sociales.</p>
+                        <p><strong>Principio:</strong> No hay principios</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="adm/maslow.jpg" alt="Abraham Maslow"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <div class="card-content">
-                    <h4>Abraham Maslow (1908-1970)</h4>
-                    <p><strong>Concepto:</strong> La motivación se basa en una jerarquía de necesidades humanas.</p>
-                    <p><strong>Teoría:</strong><br>
-                    Pirámide de Maslow: Fisiológicas, Seguridad, Sociales, Estima y Autorrealización.</p>
-                    <p><strong>Principio:</strong> No hay principio</p>
+                <div class="card">
+                    <img src="adm/maslow.jpg" alt="Abraham Maslow"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>Abraham Maslow (1908-1970)</h4>
+                        <p><strong>Concepto:</strong> La motivación se basa en una jerarquía de necesidades humanas.</p>
+                        <p><strong>Teoría:</strong><br>
+                        Pirámide de Maslow: Fisiológicas, Seguridad, Sociales, Estima y Autorrealización.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="container">
             <!-- Tercer grupo -->
-            <div class="column-title">ENFOQUE MODERNO</div>
-            <div class="card">
-                <img src="adm/von.jpg" alt="Ludwig von Bertalanffy"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <div class="card-content">
-                    <h4>Ludwig von Bertalanffy (1901-1972)</h4>
-                    <p><strong>Concepto:</strong> La organización es un sistema abierto que interactúa con su entorno.</p>
-                    <p><strong>Teoría:</strong><br>
-                    Elementos del sistema: Entrada, Proceso, Salida, Retroalimentación y Ambiente.</p>
-                    <p><strong>Principio:</strong> No hay principio</p>
+            <div class="card-group">
+                <div class="column-title">ENFOQUE MODERNO</div>
+                <div class="card">
+                    <img src="adm/von.jpg" alt="Ludwig von Bertalanffy"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>Ludwig von Bertalanffy (1901-1972)</h4>
+                        <p><strong>Concepto:</strong> La organización es un sistema abierto que interactúa con su entorno.</p>
+                        <p><strong>Teoría:</strong><br>
+                        Elementos del sistema: Entrada, Proceso, Salida, Retroalimentación y Ambiente.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="adm/contingencial.jpg" alt="Enfoque Contingencial"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <div class="card-content">
-                    <h4>Enfoque Contingencial</h4>
-                    <p><strong>Autor:</strong> Paul Lawrence, Jay Lorsch, Joan Woodward.</p>
-                    <p><strong>Concepto:</strong> No hay una única forma de administrar; la estructura debe adaptarse al contexto.</p>
-                    <p><strong>Teoría:</strong><br>
-                    - Variables clave:<br>
-                    1. Ambiente: Estable o inestable.<br>
-                    2. Tecnología: Impacta la estructura organizativa.<br>
-                    3. Estructura organizativa: Debe ajustarse a condiciones externas.</p>
-                    <p><strong>Principio:</strong> No hay principio</p>
+                <div class="card">
+                    <img src="adm/contingencial.jpg" alt="Enfoque Contingencial"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>Enfoque Contingencial</h4>
+                        <p><strong>Autor:</strong> Paul Lawrence, Jay Lorsch, Joan Woodward.</p>
+                        <p><strong>Concepto:</strong> No hay una única forma de administrar; la estructura debe adaptarse al contexto.</p>
+                        <p><strong>Teoría:</strong><br>
+                        - Variables clave:<br>
+                        1. Ambiente: Estable o inestable.<br>
+                        2. Tecnología: Impacta la estructura organizativa.<br>
+                        3. Estructura organizativa: Debe ajustarse a condiciones externas.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
+                    </div>
                 </div>
             </div>
         </div>

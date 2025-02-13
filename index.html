@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuestionario Interactivo</title>
+    <title>Carrusel de Cuestionario</title>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace; /* Fuente general del cuerpo */
@@ -18,109 +18,114 @@
             border: 1px solid #4E3B31; /* Borde café */
             border-radius: 8px;
             background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
-        }
-        .intro-title {
             text-align: center; /* Centrar el texto */
-            font-size: 32px; /* Tamaño de letra para el título de introducción */
-            font-weight: bold; /* Hacer la letra más gruesa */
-            color: white; /* Color de letra blanco */
-            background-color: #007BFF; /* Fondo celeste oscuro */
-            padding: 15px; /* Espaciado alrededor del texto */
-            border-radius: 10px; /* Bordes redondeados */
-            margin-bottom: 20px; /* Espacio debajo del título */
-        }
-        .card-group {
-            display: flex; /* Usar flexbox para las tarjetas en cada grupo */
-            flex-wrap: wrap; /* Permitir que las tarjetas se ajusten en varias filas */
-            justify-content: space-around; /* Espacio entre tarjetas */
-            width: 100%; /* Ancho del grupo de tarjetas */
-            margin: 10px 0; /* Espacio entre grupos */
         }
         .card {
-            background: #f9f9f9; /* Fondo de las cartas */
-            border: 1px solid #ddd; /* Borde de las cartas */
-            border-radius: 8px; /* Bordes redondeados */
+            display: inline-block; /* Mostrar como fichas */
             width: 200px; /* Ancho de la tarjeta */
-            height: 150px; /* Altura de la tarjeta */
+            height: 100px; /* Altura de la tarjeta */
             margin: 10px; /* Espacio entre tarjetas */
+            border-radius: 8px; /* Bordes redondeados */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
             transition: transform 0.3s; /* Transición suave para el efecto de agrandamiento */
-            cursor: pointer; /* Cambiar cursor al pasar sobre la tarjeta */
-            position: relative; /* Para el efecto de volteo */
-            overflow: hidden; /* Para ocultar el contenido que sobresale */
         }
-        .card-content {
+        .question {
+            background-color: red; /* Color de fondo para preguntas */
+            color: white; /* Color de texto para preguntas */
             padding: 15px; /* Espaciado interno */
-            text-align: left; /* Alinear texto a la izquierda */
-            backface-visibility: hidden; /* Ocultar el reverso cuando no está volteado */
-            position: absolute; /* Para superponer la respuesta */
-            top: 0; /* Alinear al inicio */
-            left: 0; /* Alinear al inicio */
-            right: 0; /* Alinear al inicio */
-            bottom: 0; /* Alinear al inicio */
-            border-radius: 8px; /* Bordes redondeados */
         }
-        .card-content.back {
-            background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
-            transform: rotateY(180deg); /* Voltear el reverso */
+        .answer {
+            background-color: blue; /* Color de fondo para respuestas */
+            color: white; /* Color de texto para respuestas */
+            padding: 15px; /* Espaciado interno */
         }
-        .card.flipped .front {
-            display: none; /* Ocultar la parte de pregunta cuando está volteada */
+        .carousel {
+            display: flex; /* Usar flexbox para el carrusel */
+            overflow: hidden; /* Ocultar el contenido que sobresale */
+            position: relative; /* Para posicionar los botones */
         }
-        .card.flipped .back {
-            display: block; /* Mostrar la parte de respuesta cuando está volteada */
+        .carousel-inner {
+            display: flex; /* Usar flexbox para alinear las tarjetas en fila */
+            transition: transform 0.5s ease; /* Transición suave para el movimiento */
+        }
+        .carousel-button {
+            position: absolute; /* Posicionar los botones */
+            top: 50%; /* Centrar verticalmente */
+            transform: translateY(-50%); /* Ajustar la posición */
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 10px; /* Espaciado interno */
+            cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+        }
+        .prev {
+            left: 10px; /* Posición del botón anterior */
+        }
+        .next {
+            right: 10px; /* Posición del botón siguiente */
         }
     </style>
 </head>
 <body>
 
 <div class="section">
-    <div class="intro-title">CUESTIONARIO INTERACTIVO</div>
-    <p class="intro-text">Haz clic en las tarjetas para revelar las respuestas.</p>
+    <div class="intro-title">CARRUSEL DE CUESTIONARIO INTERACTIVO</div>
+    <p class="intro-text">Navega a través de las preguntas y respuestas.</p>
 
-    <div class="card-group">
-        <div class="card" onclick="this.classList.toggle('flipped')">
-            <div class="card-content front">
+    <div class="carousel">
+        <div class="carousel-inner" id="carouselInner">
+            <div class="card question">
                 <h4>1. ¿Qué es la tecnología?</h4>
             </div>
-            <div class="card-content back">
+            <div class="card answer">
                 <p>Variable independiente que influye poderosamente sobre las características organizacionales (variables dependientes). Desde el punto de vista de la administración es un elemento desarrollado en las organizaciones, con base en conocimientos acumulados y desarrollados "Know-how".</p>
             </div>
-        </div>
-
-        <div class="card" onclick="this.classList.toggle('flipped')">
-            <div class="card-content front">
+            <div class="card question">
                 <h4>2. ¿Para qué sirve la organización en la administración?</h4>
             </div>
-            <div class="card-content back">
+            <div class="card answer">
                 <p>Establecimiento de una estructura, de los papeles que los individuos deberán realizar en una empresa. Agrupar las actividades necesarias para alcanzar ciertos objetivos.</p>
             </div>
-        </div>
-
-        <div class="card" onclick="this.classList.toggle('flipped')">
-            <div class="card-content front">
+            <div class="card question">
                 <h4>3. Diferencia de división de trabajo horizontal y trabajo vertical</h4>
             </div>
-            <div class="card-content back">
+            <div class="card answer">
                 <p>
                     • Diferenciación Horizontal: consiste en una especialización de la actividad y de los conocimientos. Exige un mayor número de órganos especializados en su respectiva tarea. Mismo nivel jerárquico.<br>
                     • Diferenciación Vertical: o proceso escalar, aumenta la calidad de la supervisión o dirección, incrementa el número de niveles jerárquicos de la estructura, es decir, desdoblamiento o distribución de la autoridad hace referencia al crecimiento de la cadena de mando.
                 </p>
             </div>
+            <!-- Puedes continuar agregando más preguntas y respuestas aquí -->
         </div>
-
-        <!-- Puedes continuar agregando más tarjetas aquí siguiendo el mismo formato -->
-
+        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 </div>
 
 <script>
-    // Este script permite el efecto de volteo de las tarjetas
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('click', () => {
-            card.classList.toggle('flipped');
-        });
-    });
+    let currentIndex = 0; // Índice actual del carrusel
+    const totalCards = 3; // Cambia esto al número total de preguntas/respuestas
+
+    function moveSlide(direction) {
+        const carouselInner = document.getElementById('carouselInner');
+        currentIndex += direction;
+
+        // Asegurarse de que el índice esté dentro de los límites
+        if (currentIndex < 0) {
+            currentIndex = totalCards - 1; // Volver al final
+        } else if (currentIndex >= totalCards) {
+            currentIndex = 0; // Volver al inicio
+        }
+
+        // Mover el carrusel
+        const offset = -currentIndex * 400; // Cambia 400 al ancho total de las tarjetas
+        carouselInner.style.transform = `translateX(${offset}px)`;
+    }
+
+    // Mover automáticamente cada 5 segundos
+    setInterval(() => {
+        moveSlide(1);
+    }, 5000);
 </script>
 
 </body>

@@ -63,6 +63,11 @@
         .card:hover {
             opacity: 1; /* Opacidad completa al pasar el mouse */
         }
+        .row {
+            display: flex; /* Usar flexbox para alinear las filas */
+            justify-content: center; /* Centrar las filas */
+            margin-bottom: 20px; /* Espacio entre filas */
+        }
     </style>
 </head>
 <body>
@@ -72,9 +77,9 @@
     <div class="section">
         <div class="theories-title">PRINCIPALES TEORIAS DE LA ADMINISTRACION</div>
 
-        <div class="carousel">
-            <div class="card-container" id="cardContainer">
-                <!-- ENFOQUE CLASICO -->
+        <!-- Primera fila con 3 cartas -->
+        <div class="row">
+            <div class="card-container" id="cardContainer1">
                 <div class="card">
                     <img src="ruta/a/imagen1.jpg" alt="Autor 1"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 1</h4>
@@ -96,8 +101,12 @@
                     <p><strong>Teorías:</strong> Teoría del autor 3.</p>
                     <p><strong>Principios:</strong> Principios del autor 3.</p>
                 </div>
+            </div>
+        </div>
 
-                <!-- ENFOQUE DEL COMPORTAMIENTO -->
+        <!-- Segunda fila con 2 cartas -->
+        <div class="row">
+            <div class="card-container" id="cardContainer2">
                 <div class="card">
                     <img src="ruta/a/imagen4.jpg" alt="Autor 4"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 4</h4>
@@ -112,8 +121,12 @@
                     <p><strong>Teorías:</strong> Teoría del autor 5.</p>
                     <p><strong>Principios:</strong> Principios del autor 5.</p>
                 </div>
+            </div>
+        </div>
 
-                <!-- ENFOQUES MODERNOS -->
+        <!-- Tercera fila con 2 cartas -->
+        <div class="row">
+            <div class="card-container" id="cardContainer3">
                 <div class="card">
                     <img src="ruta/a/imagen6.jpg" alt="Autor 6"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 6</h4>
@@ -131,25 +144,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        let currentIndex = 0;
-        const totalCards = document.querySelectorAll('.card').length;
-
-        function updateCarousel() {
-            const cardContainer = document.getElementById('cardContainer');
-            const offset = -currentIndex * (220); // 200px de ancho + 20px de margen
-            cardContainer.style.transform = `translateX(${offset}px)`;
-        }
-
-        function nextCard() {
-            currentIndex = (currentIndex + 1) % totalCards; // Aumentar el índice y volver al inicio si es necesario
-            updateCarousel();
-        }
-
-        // Cambiar automáticamente cada 3 segundos
-        setInterval(nextCard, 3000);
-    </script>
 
 </body>
 </html>

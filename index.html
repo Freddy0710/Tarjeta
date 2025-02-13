@@ -45,30 +45,6 @@
             justify-content: center; /* Centrar los elementos */
             align-items: center; /* Alinear verticalmente */
         }
-        .steps li {
-            position: relative; /* Posición relativa para los elementos */
-            margin: 0 15px; /* Espacio entre los pasos */
-            padding: 10px 20px; /* Espaciado interno */
-            background-color: #87CEEB; /* Fondo azul celeste */
-            border-radius: 5px; /* Bordes redondeados */
-            color: white; /* Color de texto blanco */
-        }
-        .steps li:before {
-            content: ''; /* Crear un pseudo-elemento */
-            position: absolute; /* Posición absoluta */
-            top: 50%; /* Centrar verticalmente */
-            left: -30px; /* Espacio a la izquierda */
-            width: 20px; /* Ancho del conector */
-            height: 2px; /* Alto del conector */
-            background-color: #87CEEB; /* Color del conector */
-            z-index: -1; /* Colocar detrás del texto */
-        }
-        .steps li:first-child:before {
-            content: none; /* Sin conector para el primer elemento */
-        }
-        .steps li:last-child:before {
-            content: none; /* Sin conector para el último elemento */
-        }
         .grid {
             display: flex; /* Usar flexbox para alinear los cuadros uno al lado del otro */
             justify-content: space-between; /* Espacio entre los cuadros */
@@ -99,33 +75,27 @@
         <p class="intro-text">El proceso de gestión empresarial es fundamental para el éxito de cualquier organización. Este proceso implica una serie de etapas que permiten planificar, organizar, dirigir y controlar los recursos de manera eficiente.</p>
 
         <div class="pathway">
-            <ul class="steps">
-                <li>Planificación</li>
-                <li>Organización</li>
-                <li>Dirección</li>
-                <li>Control</li>
+            <img src="adm/proceso.png" alt="Diagrama del Proceso de Gestión" style="width: 100%; max-width: 600px; border-radius: 8px;"> <!-- Imagen del proceso -->
+        </div>
+
+        <div class="box">
+            <h3>Ejemplos</h3>
+            <ul>
+                <li>Ejemplo de Planificación.</li>
+                <li>Ejemplo de Organización.</li>
+                <li>Ejemplo de Dirección.</li>
+                <li>Ejemplo de Control.</li>
             </ul>
         </div>
 
-        <div class="grid">
-            <div class="box">
-                <h3>Etapas del Proceso de Gestión</h3>
-                <ul>
-                    <li><strong>Planificación:</strong> Definir objetivos y estrategias.</li>
-                    <li><strong>Organización:</strong> Estructurar los recursos y tareas.</li>
-                    <li><strong>Dirección:</strong> Guiar y motivar al equipo.</li>
-                    <li><strong>Control:</strong> Evaluar resultados y realizar ajustes.</li>
-                </ul>
-            </div>
-            <div class="box">
-                <h3>Importancia de la Gestión Empresarial</h3>
-                <ul>
-                    <li>Mejora la eficiencia operativa.</li>
-                    <li>Facilita la toma de decisiones.</li>
-                    <li>Permite adaptarse a cambios del entorno.</li>
-                    <li>Fomenta la innovación y el crecimiento.</li>
-                </ul>
-            </div>
+        <div class="box">
+            <h3>Importancia de la Gestión Empresarial</h3>
+            <ul>
+                <li>Mejora la eficiencia operativa.</li>
+                <li>Facilita la toma de decisiones.</li>
+                <li>Permite adaptarse a cambios del entorno.</li>
+                <li>Fomenta la innovación y el crecimiento.</li>
+            </ul>
         </div>
 
         <div class="box">

@@ -54,7 +54,7 @@
         .column {
             position: relative; /* Posición relativa para superponer cartas */
             width: 30%; /* Ancho de cada columna */
-            height: auto; /* Altura automática para las columnas */
+            height: 300px; /* Altura fija para mantener el espacio */
         }
         .card {
             background: #f9f9f9; /* Fondo de las cartas */
@@ -67,7 +67,9 @@
             opacity: 0; /* Inicialmente oculto */
             transition: opacity 0.5s ease, background-color 0.3s; /* Transición suave para la opacidad y el color de fondo */
             user-select: text; /* Permitir selección de texto */
-            position: relative; /* Mantener la posición relativa */
+            position: absolute; /* Mantener la posición absoluta para superponer cartas */
+            top: 0; /* Alinear al inicio del contenedor */
+            left: 0; /* Alinear al inicio del contenedor */
         }
         .card.active {
             opacity: 1; /* Mostrar la carta activa */
@@ -78,7 +80,7 @@
         }
         .card img {
             width: 100%; /* Ancho completo para las imágenes */
-            height: 300px; /* Altura máxima para las imágenes */
+            height: 200px; /* Altura máxima para las imágenes */
             object-fit: contain; /* Mantener la proporción de la imagen y encuadrarla */
             border-radius: 8px; /* Bordes redondeados para las imágenes */
         }

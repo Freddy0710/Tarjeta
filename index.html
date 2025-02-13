@@ -66,7 +66,6 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
             opacity: 0; /* Inicialmente oculto */
             transition: opacity 0.5s ease, background-color 0.3s; /* Transición suave para la opacidad y el color de fondo */
-            position: absolute; /* Posición absoluta para superponer cartas */
             user-select: text; /* Permitir selección de texto */
         }
         .card.active {
@@ -204,7 +203,7 @@
         let currentCardIndex2 = 0;
         let currentCardIndex3 = 0;
 
-        const cards1 = document.querySelectorAll('#card1', '#card2', '#card3');
+        const cards1 = document.querySelectorAll('#card1, #card2, #card3');
         const cards2 = document.querySelectorAll('#card4, #card5');
         const cards3 = document.querySelectorAll('#card6, #card7');
 

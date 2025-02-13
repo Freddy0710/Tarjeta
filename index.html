@@ -39,8 +39,9 @@
             margin: 20px 0; /* Espacio arriba y abajo */
         }
         .grid {
-            display: flex; /* Usar flexbox para alinear los cuadros uno al lado del otro */
-            justify-content: space-between; /* Espacio entre los cuadros */
+            display: grid; /* Usar grid para el diseño cartesiano */
+            grid-template-columns: 1fr 1fr; /* Dos columnas */
+            grid-template-rows: 1fr 1fr; /* Dos filas */
             gap: 20px; /* Espacio entre los cuadros */
         }
         .box {
@@ -49,14 +50,20 @@
             border-radius: 8px; /* Bordes redondeados */
             padding: 15px; /* Espaciado interno */
             text-align: left; /* Alinear texto a la izquierda */
-            flex: 1; /* Hacer que los cuadros ocupen el mismo espacio */
         }
         h3 {
             color: #003366; /* Azul marino claro para el título */
         }
+        .sub-title {
+            color: #003366; /* Azul marino claro para los subtítulos */
+            background-color: #B2E0F9; /* Fondo celeste medio */
+            padding: 5px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            margin: 10px 0; /* Espacio arriba y abajo */
+        }
         img {
             width: 100%; /* Ancho de la imagen */
-            max-width: 700px; /* Ancho máximo de la imagen (ajustado) */
+            max-width: 700px; /* Ancho máximo de la imagen */
             height: auto; /* Altura automática para mantener la proporción */
             border-radius: 8px; /* Bordes redondeados */
             transition: transform 0.3s; /* Transición suave para el efecto de agrandamiento */
@@ -76,14 +83,37 @@
             <img src="adm/proceso.png" alt="Diagrama del Proceso de Gestión"> <!-- Imagen del proceso -->
         </div>
 
-        <div class="box">
-            <h3>Ejemplos</h3>
-            <ul>
-                <li>Planificación.</li>
-                <li>Organización.</li>
-                <li>Dirección.</li>
-                <li>Control.</li>
-            </ul>
+        <div class="grid">
+            <div class="box">
+                <div class="sub-title">Planificación:</div>
+                <ul>
+                    <li>Plan a corto plazo: POA (1 año)</li>
+                    <li>Plan a mediano plazo: Plan Estratégico Institucional (5 Años)</li>
+                    <li>Plan a largo plazo: Plan Integral de La Paz (2040)</li>
+                </ul>
+            </div>
+            <div class="box">
+                <div class="sub-title">Organización:</div>
+                <ul>
+                    <li>Unidad que lo implementa: Dirección de Gobierno Electrónico y Modernización a través de la Unidad de Desarrollo, Organización y Mejora Continua</li>
+                    <li>Estructura organizativa</li>
+                    <li>Manual de Organizaciones y Funciones</li>
+                    <li>Manual de Procesos y Procedimientos</li>
+                </ul>
+            </div>
+            <div class="box">
+                <div class="sub-title">Dirección:</div>
+                <ul>
+                    <li>Unidad que la implementa: Despacho del Alcalde Municipal a través de sus funciones (MAE de la Unidad Organizacional)</li>
+                </ul>
+            </div>
+            <div class="box">
+                <div class="sub-title">Control:</div>
+                <ul>
+                    <li>Unidad que lo implementa: Secretaría Municipal de Planificación para el Desarrollo y Secretaría Municipal de Finanzas, y la Unidad de Auditoría Interna</li>
+                    <li>Implementa realizando seguimiento a la ejecución del POA, y a la ejecución del presupuesto realizando evaluaciones cuatrimestrales</li>
+                </ul>
+            </div>
         </div>
 
         <div class="box">
@@ -94,12 +124,6 @@
                 <li>Permite adaptarse a cambios del entorno.</li>
                 <li>Fomenta la innovación y el crecimiento.</li>
             </ul>
-        </div>
-
-        <div class="box">
-            <h3>Visualización del Proceso de Gestión</h3>
-            <p>El siguiente diagrama ilustra el proceso de gestión empresarial:</p>
-            <img src="ruta/a/tu/diagrama.png" alt="Diagrama del Proceso de Gestión"> <!-- Cambia esta ruta por la de tu diagrama -->
         </div>
     </div>
 

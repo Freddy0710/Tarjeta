@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario: Administración y Organizaciones</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace; /* Fuente general del cuerpo */
+            margin: 0;
+            padding: 20px;
+            background: url('adm/fondo.jpg') repeat; /* Fondo de la página con imagen repetida */
+            color: #333;
+        }
+        .navbar {
+            display: flex; /* Usar flexbox para la barra de navegación */
+            justify-content: center; /* Centrar los elementos */
+            margin-bottom: 20px; /* Espacio debajo de la barra de navegación */
+        }
+        .nav-link {
+            margin: 0 15px; /* Espacio entre los enlaces */
+            text-decoration: none; /* Sin subrayado */
+            color: white; /* Color del texto */
+            background-color: #007BFF; /* Fondo celeste oscuro */
+            padding: 10px 20px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        }
+        .nav-link:hover {
+            background-color: #0056b3; /* Color más oscuro al pasar el cursor */
+        }
+        .title {
+            text-align: center; /* Centrar el texto */
+            font-size: 48px; /* Tamaño de letra grande */
+            font-weight: bold; /* Hacer la letra más gruesa */
+            color: white; /* Color de letra blanco */
+            background-color: #003366; /* Fondo azul intenso */
+            padding: 20px; /* Espaciado alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
+            margin-bottom: 40px; /* Espacio debajo del título */
+        }
+        .section {
+            margin-bottom: 40px; /* Espacio debajo de cada sección */
+            padding: 20px;
+            border: 1px solid #4E3B31; /* Borde café */
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+        }
+        .intro-title {
+            text-align: center; /* Centrar el texto */
+            font-size: 32px; /* Tamaño de letra para el título de introducción */
+            font-weight: bold; /* Hacer la letra más gruesa */
+            color: white; /* Color de letra blanco */
+            background-color: #007BFF; /* Fondo celeste oscuro */
+            padding: 15px; /* Espaciado alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+        .intro-text {
+            text-align: center; /* Centrar el texto */
+            font-size: 20px; /* Tamaño de letra para la introducción */
+            margin-bottom: 20px; /* Espacio debajo del texto */
+        }
+        .question {
+            font-size: 18px; /* Tamaño de letra para las preguntas */
+            margin-bottom: 10px; /* Espacio debajo de cada pregunta */
+        }
+        .answer {
+            margin: 5px 0; /* Espacio entre respuestas */
+        }
+        .submit-button {
+            background-color: #007BFF; /* Fondo celeste oscuro */
+            color: white; /* Color de letra blanco */
+            padding: 10px 20px; /* Espaciado interno */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        }
+        .submit-button:hover {
+            background-color: #0056b3; /* Color más oscuro al pasar el cursor */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="pagina_principal.html" class="nav-link">TEORÍA</a>
+        <a href="cuestionario.html" class="nav-link">CUESTIONARIO</a>
+    </div>
+
+    <div class="title">CUESTIONARIO: ADMINISTRACIÓN Y ORGANIZACIONES</div>
+
+    <div class="section">
+        <div class="intro-title">Bienvenido al Cuestionario</div>
+        <p class="intro-text">Pon a prueba tus conocimientos sobre administración y organizaciones. Responde las siguientes preguntas:</p>
+
+        <div class="question">1. ¿Cuál es la función principal de la administración?</div>
+        <div class="answer">
+            <input type="radio" name="q1" value="a"> a) Planificar<br>
+            <input type="radio" name="q1" value="b"> b) Organizar<br>
+            <input type="radio" name="q1" value="c"> c) Dirigir<br>
+            <input type="radio" name="q1" value="d"> d) Controlar<br>
+        </div>
+
+        <div class="question">2. ¿Qué autor es conocido por la teoría de la administración científica?</div>
+        <div class="answer">
+            <input type="radio" name="q2" value="a"> a) Henri Fayol<br>
+            <input type="radio" name="q2" value="b"> b) Max Weber<br>
+            <input type="radio" name="q2" value="c"> c) Frederick Taylor<br>
+            <input type="radio" name="q2" value="d"> d) Elton Mayo<br>
+        </div>
+
+        <button class="submit-button">Enviar Respuestas</button>
+    </div>
+
+</body>
+</html>

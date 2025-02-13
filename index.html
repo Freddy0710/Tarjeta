@@ -45,8 +45,9 @@
             margin-bottom: 20px; /* Espacio debajo del texto */
         }
         .grid {
-            display: flex; /* Usar flexbox para alinear los cuadros uno al lado del otro */
-            justify-content: space-between; /* Espacio entre los cuadros */
+            display: grid; /* Usar grid para el diseño cartesiano */
+            grid-template-columns: 1fr 1fr; /* Dos columnas */
+            grid-template-rows: 1fr 1fr; /* Dos filas */
             gap: 20px; /* Espacio entre los cuadros */
         }
         .box {
@@ -55,7 +56,6 @@
             border-radius: 8px; /* Bordes redondeados */
             padding: 15px; /* Espaciado interno */
             text-align: left; /* Alinear texto a la izquierda */
-            flex: 1; /* Hacer que los cuadros ocupen el mismo espacio */
         }
         .nature-title {
             color: blue; /* Color azul para el subtítulo de naturaleza */
@@ -65,6 +65,11 @@
         }
         .sub-title {
             font-weight: bold; /* Negrita para los subtítulos dentro del cuadro */
+            color: #003366; /* Azul marino claro */
+            background-color: #B2E0F9; /* Fondo celeste */
+            padding: 5px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            margin: 10px 0; /* Espacio arriba y abajo */
         }
         .theories-title {
             text-align: center; /* Centrar el texto */
@@ -163,42 +168,57 @@
 </head>
 <body>
 
-    <div class="title">ADMINISTRACION Y ORGANIZACIONES</div>
-
     <div class="section">
-        <div class="intro-title">Introducción</div>
-        <p class="intro-text">Es un proceso fundamental para cualquier organización pública o privada, con y sin fines de lucro. Su aplicación eficiente permite alcanzar los objetivos establecidos. A lo largo de la historia se han desarrollado varias teorías y enfoques administrativos, que buscan optimizar el rendimiento y efectividad de la organización.</p>
+        <div class="title">ADMINISTRACIÓN Y ORGANIZACIONES</div>
+        <div class="intro-title">PROCESO DE GESTION EMPRESARIAL</div>
+        <p class="intro-text">El proceso de gestión empresarial es fundamental para el éxito de cualquier organización. Este proceso implica una serie de etapas que permiten planificar, organizar, dirigir y controlar los recursos de manera eficiente.</p>
+
+        <div class="pathway">
+            <img src="adm/proceso.png" alt="Diagrama del Proceso de Gestión"> <!-- Imagen del proceso -->
+        </div>
+
+        <div class="example-title">EJEMPLO</div> <!-- Encabezado del plano cartesiano -->
 
         <div class="grid">
             <div class="box">
-                <h3>Administración proviene de la siguiente unión de palabras:</h3>
+                <div class="sub-title">Planificación:</div>
                 <ul>
-                    <li>Ad = Hacia</li>
-                    <li>Minister = Subordinación</li>
+                    <li>Plan a corto plazo: POA (1 año)</li>
+                    <li>Plan a mediano plazo: Plan Estratégico Institucional (5 Años)</li>
+                    <li>Plan a largo plazo: Plan Integral de La Paz (2040)</li>
                 </ul>
             </div>
             <div class="box">
-                <h3>Diferencia Entre Organización y Empresa</h3>
+                <div class="sub-title">Organización:</div>
                 <ul>
-                    <li>Organización: Busca cumplir objetivos</li>
-                    <li>Empresa: Busca maximizar ganancias</li>
+                    <li>Unidad que lo implementa: Dirección de Gobierno Electrónico y Modernización a través de la Unidad de Desarrollo, Organización y Mejora Continua</li>
+                    <li>Estructura organizativa</li>
+                    <li>Manual de Organizaciones y Funciones</li>
+                    <li>Manual de Procesos y Procedimientos</li>
+                </ul>
+            </div>
+            <div class="box">
+                <div class="sub-title">Dirección:</div>
+                <ul>
+                    <li>Unidad que la implementa: Despacho del Alcalde Municipal a través de sus funciones (MAE de la Unidad Organizacional)</li>
+                </ul>
+            </div>
+            <div class="box">
+                <div class="sub-title">Control:</div>
+                <ul>
+                    <li>Unidad que lo implementa: Secretaría Municipal de Planificación para el Desarrollo y Secretaría Municipal de Finanzas, y la Unidad de Auditoría Interna</li>
+                    <li>Implementa realizando seguimiento a la ejecución del POA, y a la ejecución del presupuesto realizando evaluaciones cuatrimestrales</li>
                 </ul>
             </div>
         </div>
-    </div>
-
-    <div class="section">
-        <div class="definition-title">DEFINICION Y NATURALEZA</div>
-        <p class="definition-text">Henry Fayol: “preveer, organizar, mandar, coordinar y controlar”</p>
-        <p class="definition-text"><span class="sub-title">Komt’s y Odonel:</span> “dirección de un organismo social, y su efectividad para alcanzar los objetivos, basados en la habilidad de conducir a sus integrantes”</p>
-        <p class="definition-text">En resumen, administrar no son únicamente planificar, organizar, dirigir y controlar, sino es marcar un conjunto de decisiones y acciones que se apliquen en varias situaciones de la organización.</p>
 
         <div class="box">
-            <div class="nature-title">NATURALEZA</div>
+            <h3>Importancia de la Gestión Empresarial</h3>
             <ul>
-                <li><span class="sub-title">Ciencia:</span> Análisis dinámico de situaciones para la toma de decisiones</li>
-                <li><span class="sub-title">Arte:</span> Involucra la visión, creatividad y habilidad para guiar y motivar al equipo</li>
-                <li><span class="sub-title">Tecnología:</span> Implementación de procedimientos, prácticos operacionales y específicos</li>
+                <li>Mejora la eficiencia operativa.</li>
+                <li>Facilita la toma de decisiones.</li>
+                <li>Permite adaptarse a cambios del entorno.</li>
+                <li>Fomenta la innovación y el crecimiento.</li>
             </ul>
         </div>
     </div>
@@ -313,60 +333,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="intro-title">PROCESO DE GESTION EMPRESARIAL</div>
-        <p class="intro-text">El proceso de gestión empresarial es fundamental para el éxito de cualquier organización. Este proceso implica una serie de etapas que permiten planificar, organizar, dirigir y controlar los recursos de manera eficiente.</p>
-
-        <div class="pathway">
-            <img src="adm/proceso.png" alt="Diagrama del Proceso de Gestión"> <!-- Imagen del proceso -->
-        </div>
-
-        <div class="example-title">EJEMPLO</div> <!-- Encabezado del plano cartesiano -->
-
-        <div class="grid">
-            <div class="box">
-                <div class="sub-title">Planificación:</div>
-                <ul>
-                    <li>Plan a corto plazo: POA (1 año)</li>
-                    <li>Plan a mediano plazo: Plan Estratégico Institucional (5 Años)</li>
-                    <li>Plan a largo plazo: Plan Integral de La Paz (2040)</li>
-                </ul>
-            </div>
-            <div class="box">
-                <div class="sub-title">Organización:</div>
-                <ul>
-                    <li>Unidad que lo implementa: Dirección de Gobierno Electrónico y Modernización a través de la Unidad de Desarrollo, Organización y Mejora Continua</li>
-                    <li>Estructura organizativa</li>
-                    <li>Manual de Organizaciones y Funciones</li>
-                    <li>Manual de Procesos y Procedimientos</li>
-                </ul>
-            </div>
-            <div class="box">
-                <div class="sub-title">Dirección:</div>
-                <ul>
-                    <li>Unidad que la implementa: Despacho del Alcalde Municipal a través de sus funciones (MAE de la Unidad Organizacional)</li>
-                </ul>
-            </div>
-            <div class="box">
-                <div class="sub-title">Control:</div>
-                <ul>
-                    <li>Unidad que lo implementa: Secretaría Municipal de Planificación para el Desarrollo y Secretaría Municipal de Finanzas, y la Unidad de Auditoría Interna</li>
-                    <li>Implementa realizando seguimiento a la ejecución del POA, y a la ejecución del presupuesto realizando evaluaciones cuatrimestrales</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="box">
-            <h3>Importancia de la Gestión Empresarial</h3>
-            <ul>
-                <li>Mejora la eficiencia operativa.</li>
-                <li>Facilita la toma de decisiones.</li>
-                <li>Permite adaptarse a cambios del entorno.</li>
-                <li>Fomenta la innovación y el crecimiento.</li>
-            </ul>
         </div>
     </div>
 

@@ -77,6 +77,12 @@
             cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
             margin: 5px; /* Espacio alrededor del botón */
         }
+        .column-title {
+            text-align: center; /* Centrar el texto del título de la columna */
+            font-weight: bold; /* Negrita para el título */
+            margin-bottom: 10px; /* Espacio debajo del título */
+            color: #333; /* Color del texto */
+        }
     </style>
 </head>
 <body>
@@ -89,6 +95,7 @@
         <div class="container">
             <!-- Primera columna -->
             <div class="column">
+                <div class="column-title">ENFOQUE CLASICO</div>
                 <div class="card active" id="card1">
                     <img src="ruta/a/imagen1.jpg" alt="Autor 1"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 1</h4>
@@ -107,6 +114,7 @@
 
             <!-- Segunda columna -->
             <div class="column">
+                <div class="column-title">ENFOQUE DEL COMPORTAMIENTO</div>
                 <div class="card active" id="card3">
                     <img src="ruta/a/imagen3.jpg" alt="Autor 3"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 3</h4>
@@ -125,6 +133,7 @@
 
             <!-- Tercera columna -->
             <div class="column">
+                <div class="column-title">ENFOQUE MODERNO</div>
                 <div class="card active" id="card5">
                     <img src="ruta/a/imagen5.jpg" alt="Autor 5"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 5</h4>

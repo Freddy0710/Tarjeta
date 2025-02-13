@@ -39,18 +39,14 @@
             border-radius: 10px; /* Bordes redondeados */
             margin-bottom: 20px; /* Espacio debajo del título */
         }
-        .container {
-            display: flex; /* Usar flexbox para alinear las partes */
-            flex-direction: column; /* Colocar las partes en columna */
-            align-items: center; /* Centrar las partes */
+        .carousel {
+            display: flex; /* Usar flexbox para alinear las cartas */
+            overflow: hidden; /* Ocultar el desbordamiento */
+            position: relative; /* Posición relativa para el control del carrusel */
         }
-        .row {
-            display: flex; /* Usar flexbox para alinear las filas */
-            justify-content: center; /* Centrar las filas */
-            margin-bottom: 20px; /* Espacio entre filas */
-            width: 100%; /* Ancho completo */
-            position: relative; /* Posición relativa para superponer cartas */
-            height: 200px; /* Altura fija para las filas */
+        .card-container {
+            display: flex; /* Usar flexbox para alinear las cartas */
+            transition: transform 0.5s ease; /* Transición suave al mover las cartas */
         }
         .card {
             background: #f9f9f9; /* Fondo de las cartas */
@@ -60,12 +56,17 @@
             text-align: center; /* Centrar texto */
             padding: 10px; /* Espaciado interno */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-            opacity: 0; /* Inicialmente oculto */
-            transition: opacity 0.5s ease; /* Transición suave para la opacidad */
-            position: absolute; /* Posición absoluta para superponer cartas */
+            margin: 0 10px; /* Espacio entre las cartas */
+            opacity: 0.7; /* Opacidad inicial */
+            transition: opacity 0.3s; /* Transición suave para la opacidad */
         }
-        .card.active {
-            opacity: 1; /* Mostrar la carta activa */
+        .card:hover {
+            opacity: 1; /* Opacidad completa al pasar el mouse */
+        }
+        .row {
+            display: flex; /* Usar flexbox para alinear las filas */
+            justify-content: center; /* Centrar las filas */
+            margin-bottom: 20px; /* Espacio entre filas */
         }
     </style>
 </head>
@@ -76,28 +77,24 @@
     <div class="section">
         <div class="theories-title">PRINCIPALES TEORIAS DE LA ADMINISTRACION</div>
 
-        <div class="container">
-            <!-- Primera fila con 2 cartas -->
-            <div class="row">
-                <div class="card active" id="card1">
+        <!-- Primera fila con 3 cartas -->
+        <div class="row">
+            <div class="card-container" id="cardContainer1">
+                <div class="card">
                     <img src="ruta/a/imagen1.jpg" alt="Autor 1"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 1</h4>
                     <p><strong>Concepto:</strong> Concepto del autor 1.</p>
                     <p><strong>Teorías:</strong> Teoría del autor 1.</p>
                     <p><strong>Principios:</strong> Principios del autor 1.</p>
                 </div>
-                <div class="card" id="card2">
+                <div class="card">
                     <img src="ruta/a/imagen2.jpg" alt="Autor 2"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 2</h4>
                     <p><strong>Concepto:</strong> Concepto del autor 2.</p>
                     <p><strong>Teorías:</strong> Teoría del autor 2.</p>
                     <p><strong>Principios:</strong> Principios del autor 2.</p>
                 </div>
-            </div>
-
-            <!-- Tercera fila con 1 carta -->
-            <div class="row">
-                <div class="card" id="card3">
+                <div class="card">
                     <img src="ruta/a/imagen3.jpg" alt="Autor 3"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 3</h4>
                     <p><strong>Concepto:</strong> Concepto del autor 3.</p>
@@ -106,40 +103,47 @@
                 </div>
             </div>
         </div>
+
+        <!-- Segunda fila con 2 cartas -->
+        <div class="row">
+            <div class="card-container" id="cardContainer2">
+                <div class="card">
+                    <img src="ruta/a/imagen4.jpg" alt="Autor 4"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Autor 4</h4>
+                    <p><strong>Concepto:</strong> Concepto del autor 4.</p>
+                    <p><strong>Teorías:</strong> Teoría del autor 4.</p>
+                    <p><strong>Principios:</strong> Principios del autor 4.</p>
+                </div>
+                <div class="card">
+                    <img src="ruta/a/imagen5.jpg" alt="Autor 5"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Autor 5</h4>
+                    <p><strong>Concepto:</strong> Concepto del autor 5.</p>
+                    <p><strong>Teorías:</strong> Teoría del autor 5.</p>
+                    <p><strong>Principios:</strong> Principios del autor 5.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tercera fila con 2 cartas -->
+        <div class="row">
+            <div class="card-container" id="cardContainer3">
+                <div class="card">
+                    <img src="ruta/a/imagen6.jpg" alt="Autor 6"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Autor 6</h4>
+                    <p><strong>Concepto:</strong> Concepto del autor 6.</p>
+                    <p><strong>Teorías:</strong> Teoría del autor 6.</p>
+                    <p><strong>Principios:</strong> Principios del autor 6.</p>
+                </div>
+                <div class="card">
+                    <img src="ruta/a/imagen7.jpg" alt="Autor 7"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Autor 7</h4>
+                    <p><strong>Concepto:</strong> Concepto del autor 7.</p>
+                    <p><strong>Teorías:</strong> Teoría del autor 7.</p>
+                    <p><strong>Principios:</strong> Principios del autor 7.</p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <script>
-        let currentCardIndex1 = 0;
-        let currentCardIndex2 = 0;
-
-        const cards1 = document.querySelectorAll('#card1, #card2');
-        const cards2 = document.querySelectorAll('#card3');
-
-        function showCard(cards, currentIndex) {
-            cards.forEach((card, index) => {
-                card.classList.remove('active'); // Ocultar todas las cartas
-                if (index === currentIndex) {
-                    card.classList.add('active'); // Mostrar la carta activa
-                }
-            });
-        }
-
-        function nextCard() {
-            currentCardIndex1 = (currentCardIndex1 + 1) % cards1.length; // Cambiar índice de la primera fila
-            showCard(cards1, currentCardIndex1);
-        }
-
-        function nextCard2() {
-            currentCardIndex2 = (currentCardIndex2 + 1) % cards2.length; // Cambiar índice de la segunda fila
-            showCard(cards2, currentCardIndex2);
-        }
-
-        // Cambiar automáticamente cada 3 segundos
-        setInterval(() => {
-            nextCard();
-            nextCard2();
-        }, 3000);
-    </script>
 
 </body>
 </html>

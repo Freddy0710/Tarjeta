@@ -176,6 +176,32 @@
         img:hover {
             transform: scale(1.05); /* Agrandar la imagen al pasar el cursor */
         }
+
+        /* Estilos para el cuestionario */
+        .quiz-section {
+            margin-top: 40px; /* Espacio encima de la sección de cuestionarios */
+        }
+        .quiz-card {
+            display: flex; /* Usar flexbox para la tarjeta de pregunta/respuesta */
+            justify-content: center; /* Centrar el contenido */
+            align-items: center; /* Centrar verticalmente */
+            width: 100%; /* Ancho completo */
+            margin: 10px 0; /* Espacio entre tarjetas */
+            border-radius: 8px; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar cursor al pasar sobre la tarjeta */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        }
+        .quiz-card.question {
+            background-color: white; /* Fondo blanco para preguntas */
+            color: blue; /* Color azul para el texto de preguntas */
+        }
+        .quiz-card.answer {
+            background-color: blue; /* Fondo azul para respuestas */
+            color: white; /* Color blanco para el texto de respuestas */
+        }
+        .quiz-card:hover {
+            background-color: #e0e0e0; /* Color gris claro al pasar el cursor sobre preguntas */
+        }
     </style>
 </head>
 <body>
@@ -392,6 +418,41 @@
         </div>
     </div>
 
-   
+    <!-- Nueva sección de cuestionarios -->
+    <div class="section quiz-section" id="cuestionario">
+        <div class="intro-title">CUESTIONARIO</div>
+        <p class="intro-text">Aquí puedes ver las preguntas y respuestas en formato de fichas.</p>
+
+        <div class="quiz-card question">
+            <h4>¿Qué es la administración?</h4>
+        </div>
+        <div class="quiz-card answer">
+            <p>Es el proceso de planificar, organizar, dirigir y controlar los recursos de una organización.</p>
+        </div>
+
+        <div class="quiz-card question">
+            <h4>¿Cuáles son las funciones de la administración?</h4>
+        </div>
+        <div class="quiz-card answer">
+            <p>Planificación, organización, dirección y control.</p>
+        </div>
+
+        <div class="quiz-card question">
+            <h4>¿Qué es un objetivo organizacional?</h4>
+        </div>
+        <div class="quiz-card answer">
+            <p>Es una meta que una organización se propone alcanzar en un periodo determinado.</p>
+        </div>
+
+        <div class="quiz-card question">
+            <h4>¿Qué es la eficiencia en la administración?</h4>
+        </div>
+        <div class="quiz-card answer">
+            <p>Es la capacidad de lograr los objetivos con el menor uso de recursos posible.</p>
+        </div>
+
+        <!-- Agregar más preguntas y respuestas aquí -->
+    </div>
+
 </body>
 </html>

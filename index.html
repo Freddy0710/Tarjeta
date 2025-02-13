@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infograma: Proceso de Gestión Empresarial</title>
+    <title>Infograma: Administración y Organizaciones</title>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace; /* Fuente general del cuerpo */
@@ -12,6 +12,16 @@
             background: linear-gradient(135deg, #f0f4c3, #c5e1a5); /* Fondo en degradado suave */
             color: #333;
         }
+        .title {
+            text-align: center; /* Centrar el texto */
+            font-size: 48px; /* Tamaño de letra grande */
+            font-weight: bold; /* Hacer la letra más gruesa */
+            color: white; /* Color de letra blanco */
+            background-color: #87CEEB; /* Fondo azul celeste */
+            padding: 20px; /* Espaciado alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
+            margin-bottom: 40px; /* Espacio debajo del título */
+        }
         .section {
             margin-bottom: 40px; /* Espacio debajo de cada sección */
             padding: 20px;
@@ -19,9 +29,9 @@
             border-radius: 8px;
             background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
         }
-        .intro-title {
+        .intro-title, .definition-title {
             text-align: center; /* Centrar el texto */
-            font-size: 32px; /* Tamaño de letra para el título */
+            font-size: 32px; /* Tamaño de letra para el título de introducción */
             font-weight: bold; /* Hacer la letra más gruesa */
             color: white; /* Color de letra blanco */
             background-color: #FF7F7F; /* Fondo rojo suave */
@@ -29,19 +39,14 @@
             border-radius: 10px; /* Bordes redondeados */
             margin-bottom: 20px; /* Espacio debajo del título */
         }
-        .intro-text {
+        .intro-text, .definition-text {
             text-align: center; /* Centrar el texto */
             font-size: 20px; /* Tamaño de letra para la introducción */
             margin-bottom: 20px; /* Espacio debajo del texto */
         }
-        .pathway {
-            text-align: center; /* Centrar el camino */
-            margin: 20px 0; /* Espacio arriba y abajo */
-        }
         .grid {
-            display: grid; /* Usar grid para el diseño cartesiano */
-            grid-template-columns: 1fr 1fr; /* Dos columnas */
-            grid-template-rows: 1fr 1fr; /* Dos filas */
+            display: flex; /* Usar flexbox para alinear los cuadros uno al lado del otro */
+            justify-content: space-between; /* Espacio entre los cuadros */
             gap: 20px; /* Espacio entre los cuadros */
         }
         .box {
@@ -50,37 +55,245 @@
             border-radius: 8px; /* Bordes redondeados */
             padding: 15px; /* Espaciado interno */
             text-align: left; /* Alinear texto a la izquierda */
+            flex: 1; /* Hacer que los cuadros ocupen el mismo espacio */
         }
-        h3 {
-            color: #003366; /* Azul marino claro para el título */
+        .nature-title {
+            color: blue; /* Color azul para el subtítulo de naturaleza */
+            font-weight: bold; /* Negrita para el subtítulo */
+            font-size: 24px; /* Tamaño de letra para el subtítulo */
+            margin-bottom: 10px; /* Espacio debajo del subtítulo */
         }
         .sub-title {
-            color: #003366; /* Azul marino claro para los subtítulos */
-            background-color: #B2E0F9; /* Fondo celeste medio */
-            padding: 5px; /* Espaciado interno */
-            border-radius: 5px; /* Bordes redondeados */
-            margin: 10px 0; /* Espacio arriba y abajo */
+            font-weight: bold; /* Negrita para los subtítulos dentro del cuadro */
         }
-        .example-title {
+        .theories-title {
             text-align: center; /* Centrar el texto */
-            font-size: 28px; /* Tamaño de letra para el título de ejemplo */
+            font-size: 32px; /* Tamaño de letra para el título de teorías */
             font-weight: bold; /* Hacer la letra más gruesa */
-            color: #003366; /* Color azul marino claro */
+            color: white; /* Color de letra blanco */
+            background-color: #FF7F7F; /* Fondo rojo suave */
+            padding: 15px; /* Espaciado alrededor del texto */
+            border-radius: 10px; /* Bordes redondeados */
             margin-bottom: 20px; /* Espacio debajo del título */
         }
-        img {
-            width: 100%; /* Ancho de la imagen */
-            max-width: 700px; /* Ancho máximo de la imagen */
-            height: auto; /* Altura automática para mantener la proporción */
-            border-radius: 8px; /* Bordes redondeados */
-            transition: transform 0.3s; /* Transición suave para el efecto de agrandamiento */
+        .container {
+            display: flex; /* Usar flexbox para alinear las partes */
+            flex-direction: column; /* Alinear en columna */
+            align-items: center; /* Centrar las tarjetas */
         }
-        img:hover {
-            transform: scale(1.05); /* Agrandar la imagen al pasar el cursor */
+        .card-group {
+            display: flex; /* Usar flexbox para las tarjetas en cada grupo */
+            justify-content: space-between; /* Espacio entre tarjetas */
+            width: 90%; /* Ancho del grupo de tarjetas */
+            margin: 10px 0; /* Espacio entre grupos */
+        }
+        .card {
+            display: flex; /* Usar flexbox para la tarjeta */
+            background: #f9f9f9; /* Fondo de las cartas */
+            border: 1px solid #ddd; /* Borde de las cartas */
+            border-radius: 8px; /* Bordes redondeados */
+            width: 100%; /* Ancho de la tarjeta */
+            margin: 10px; /* Espacio entre tarjetas */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+            user-select: text; /* Permitir selección de texto */
+        }
+        .card:hover {
+            background-color: #ADD8E6; /* Color celeste claro al pasar el cursor */
+            cursor: pointer; /* Cambiar cursor al pasar sobre la tarjeta */
+        }
+        .card img {
+            width: 150px; /* Ancho de la imagen */
+            height: 150px; /* Altura de la imagen */
+            border-radius: 50%; /* Hacer la imagen ovalada */
+            margin-right: 10px; /* Espacio entre la imagen y el contenido */
+        }
+        .card-content {
+            padding: 10px; /* Espaciado interno para el contenido de la tarjeta */
+            flex-grow: 1; /* Permitir que el contenido crezca */
+        }
+        .card-content h4 {
+            color: #003366; /* Azul marino claro para el título */
+            margin: 0; /* Sin margen */
+            text-align: center; /* Centrar el subtítulo */
+        }
+        .card-content p {
+            margin: 5px 0; /* Margen entre párrafos */
+        }
+        .card-content strong {
+            color: #003366; /* Azul marino claro para los títulos de sección */
+            background-color: #e0f7fa; /* Fondo suave */
+            padding: 2px 4px; /* Espaciado interno */
+            border-radius: 4px; /* Bordes redondeados */
+        }
+        .author-name {
+            text-align: center; /* Centrar el nombre del autor */
+            margin-top: 5px; /* Espacio arriba del nombre */
+            font-weight: bold; /* Negrita para el nombre */
+            color: #003366; /* Azul marino claro para el nombre */
+        }
+        .column-title {
+            text-align: center; /* Centrar el texto del título de la columna */
+            font-weight: bold; /* Negrita para el título */
+            margin-bottom: 10px; /* Espacio debajo del título */
+            color: #333; /* Color del texto */
         }
     </style>
 </head>
 <body>
+
+    <div class="title">ADMINISTRACION Y ORGANIZACIONES</div>
+
+    <div class="section">
+        <div class="intro-title">Introducción</div>
+        <p class="intro-text">Es un proceso fundamental para cualquier organización pública o privada, con y sin fines de lucro. Su aplicación eficiente permite alcanzar los objetivos establecidos. A lo largo de la historia se han desarrollado varias teorías y enfoques administrativos, que buscan optimizar el rendimiento y efectividad de la organización.</p>
+
+        <div class="grid">
+            <div class="box">
+                <h3>Administración proviene de la siguiente unión de palabras:</h3>
+                <ul>
+                    <li>Ad = Hacia</li>
+                    <li>Minister = Subordinación</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>Diferencia Entre Organización y Empresa</h3>
+                <ul>
+                    <li>Organización: Busca cumplir objetivos</li>
+                    <li>Empresa: Busca maximizar ganancias</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="definition-title">DEFINICION Y NATURALEZA</div>
+        <p class="definition-text">Henry Fayol: “preveer, organizar, mandar, coordinar y controlar”</p>
+        <p class="definition-text"><span class="sub-title">Komt’s y Odonel:</span> “dirección de un organismo social, y su efectividad para alcanzar los objetivos, basados en la habilidad de conducir a sus integrantes”</p>
+        <p class="definition-text">En resumen, administrar no son únicamente planificar, organizar, dirigir y controlar, sino es marcar un conjunto de decisiones y acciones que se apliquen en varias situaciones de la organización.</p>
+
+        <div class="box">
+            <div class="nature-title">NATURALEZA</div>
+            <ul>
+                <li><span class="sub-title">Ciencia:</span> Análisis dinámico de situaciones para la toma de decisiones</li>
+                <li><span class="sub-title">Arte:</span> Involucra la visión, creatividad y habilidad para guiar y motivar al equipo</li>
+                <li><span class="sub-title">Tecnología:</span> Implementación de procedimientos, prácticos operacionales y específicos</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="theories-title">PRINCIPALES TEORIAS DE LA ADMINISTRACION</div>
+
+        <div class="container">
+            <!-- Primer grupo -->
+            <div class="column-title">ENFOQUE CLASICO</div>
+            <div class="card-group">
+                <div class="card">
+                    <img src="adm/taylor.jpg" alt="Frederick Taylor"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>ADMINISTRACION CIENTIFICA</h4>
+                        <p><strong>Autor:</strong> Frederick Taylor</p>
+                        <p><strong>Concepto:</strong> Se basa en la racionalización del trabajo para aumentar la eficiencia y la productividad mediante métodos científicos.</p>
+                        <p><strong>Teoría:</strong><br>
+                        - Planificación: Uso de procedimientos científicos en lugar de improvisación.<br>
+                        - Preparación: Selección y formación de trabajadores.<br>
+                        - Control: Supervisión constante para garantizar estándares.<br>
+                        - Ejecución: División clara entre planeación y ejecución.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="adm/fayol.jpg" alt="Henri Fayol"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>TEORIA DEL PROCESO ADMINISTRATIVO</h4>
+                        <p><strong>Autor:</strong> Henri Fayol</p>
+                        <p><strong>Concepto:</strong> La administración es un proceso basado en principios generales aplicables a cualquier organización.</p>
+                        <p><strong>Teoría:</strong><br>
+                        14 principios administrativos, entre ellos: División del trabajo, Autoridad, Unidad de mando, Jerarquía y Coordinación.</p>
+                        <p><strong>Principio:</strong> 5 funciones del directivo: Planificación, Organización, Coordinación, Dirección y Control.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-group">
+                <div class="card">
+                    <img src="adm/weber.jpg" alt="Max Weber"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>TEORIA BUROCRATICA</h4>
+                        <p><strong>Autor:</strong> Max Weber</p>
+                        <p><strong>Concepto:</strong> Plantea la burocracia como una estructura organizacional basada en normas, jerarquía y división del trabajo.</p>
+                        <p><strong>Teoría:</strong><br>
+                        3 tipos de autoridad:<br>
+                        1. Tradicional: Basada en costumbre y herencia.<br>
+                        2. Carismática: Basada en las cualidades del líder.<br>
+                        3. Racional legal: Basada en normas y procedimientos.</p>
+                        <p><strong>Principio:</strong> Jerarquía, reglas escritas, profesionalización y separación entre propiedad y administración.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Segundo grupo -->
+            <div class="column-title">ENFOQUE DEL COMPORTAMIENTO</div>
+            <div class="card-group">
+                <div class="card">
+                    <img src="adm/mayo.jpg" alt="Elton Mayo"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>RELACIONES HUMANAS</h4>
+                        <p><strong>Autor:</strong> Elton Mayo</p>
+                        <p><strong>Concepto:</strong> Introduce la importancia de los factores sociales y psicológicos en la productividad.</p>
+                        <p><strong>Teoría:</strong><br>
+                        Estudios de Hawthorne: Motivación influenciada por relaciones humanas y condiciones sociales.</p>
+                        <p><strong>Principio:</strong> No hay principios</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="adm/maslow.jpg" alt="Abraham Maslow"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>TEORIA DE LA MOTIVACION</h4>
+                        <p><strong>Autor:</strong> Abraham Maslow</p>
+                        <p><strong>Concepto:</strong> La motivación se basa en una jerarquía de necesidades humanas.</p>
+                        <p><strong>Teoría:</strong><br>
+                        Pirámide de Maslow: Fisiológicas, Seguridad, Sociales, Estima y Autorrealización.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Tercer grupo -->
+            <div class="column-title">ENFOQUE MODERNO</div>
+            <div class="card-group">
+                <div class="card">
+                    <img src="adm/von.jpg" alt="Ludwig von Bertalanffy"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>ENFOQUE DE SISTEMAS</h4>
+                        <p><strong>Autor:</strong> Ludwig von Bertalanffy</p>
+                        <p><strong>Concepto:</strong> La organización es un sistema abierto que interactúa con su entorno.</p>
+                        <p><strong>Teoría:</strong><br>
+                        Elementos del sistema: Entrada, Proceso, Salida, Retroalimentación y Ambiente.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="adm/contingencial.jpg" alt="Enfoque Contingencial"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <div class="card-content">
+                        <h4>ENFOQUE CONTINGENCIAL</h4>
+                        <p><strong>Autor:</strong> Paul Lawrence, Jay Lorsch, Joan Woodward.</p>
+                        <p><strong>Concepto:</strong> No hay una única forma de administrar; la estructura debe adaptarse al contexto.</p>
+                        <p><strong>Teoría:</strong><br>
+                        - Variables clave:<br>
+                        1. Ambiente: Estable o inestable.<br>
+                        2. Tecnología: Impacta la estructura organizativa.<br>
+                        3. Estructura organizativa: Debe ajustarse a condiciones externas.</p>
+                        <p><strong>Principio:</strong> No hay principio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="section">
         <div class="intro-title">PROCESO DE GESTION EMPRESARIAL</div>

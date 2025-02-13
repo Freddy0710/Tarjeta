@@ -30,7 +30,7 @@
             background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
             max-width: 1200px; /* Ancho máximo del contenedor */
             margin: 0 auto; /* Centrar el contenedor */
-            min-height: 400px; /* Altura mínima para hacer el cuadro más largo */
+            min-height: 500px; /* Altura mínima para hacer el cuadro más largo */
         }
         .theories-title {
             text-align: center; /* Centrar el texto */
@@ -42,6 +42,59 @@
             border-radius: 10px; /* Bordes redondeados */
             margin-bottom: 20px; /* Espacio debajo del título */
         }
+        .container {
+            display: flex; /* Usar flexbox para alinear las partes */
+            justify-content: space-between; /* Espacio entre columnas */
+            align-items: flex-start; /* Alinear al inicio */
+        }
+        .column {
+            position: relative; /* Posición relativa para superponer cartas */
+            width: 30%; /* Ancho de cada columna */
+            height: auto; /* Altura automática para las columnas */
+        }
+        .card {
+            background: #f9f9f9; /* Fondo de las cartas */
+            border: 1px solid #ddd; /* Borde de las cartas */
+            border-radius: 8px; /* Bordes redondeados */
+            width: 100%; /* Ancho completo para las cartas */
+            text-align: center; /* Centrar texto */
+            padding: 10px; /* Espaciado interno */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            opacity: 0; /* Inicialmente oculto */
+            transition: opacity 0.5s ease, background-color 0.3s; /* Transición suave para la opacidad y el color de fondo */
+            position: absolute; /* Posición absoluta para superponer cartas */
+        }
+        .card.active {
+            opacity: 1; /* Mostrar la carta activa */
+        }
+        .card:hover {
+            background-color: #e0e0e0; /* Color más oscuro al pasar el cursor */
+        }
+        .card img {
+            width: 100%; /* Ancho completo para las imágenes */
+            height: 300px; /* Altura máxima para las imágenes */
+            object-fit: contain; /* Mantener la proporción de la imagen y encuadrarla */
+            border-radius: 8px; /* Bordes redondeados para las imágenes */
+        }
+        .button-container {
+            text-align: center; /* Centrar los botones */
+            margin-top: 10px; /* Espacio arriba de los botones */
+        }
+        .button {
+            background-color: #FF7F7F; /* Color del botón */
+            color: white; /* Color del texto del botón */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 10px 15px; /* Espaciado interno */
+            cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+            margin: 5px; /* Espacio alrededor del botón */
+        }
+        .column-title {
+            text-align: center; /* Centrar el texto del título de la columna */
+            font-weight: bold; /* Negrita para el título */
+            margin-bottom: 10px; /* Espacio debajo del título */
+            color: #333; /* Color del texto */
+        }
     </style>
 </head>
 <body>
@@ -50,8 +103,56 @@
 
     <div class="section">
         <div class="theories-title">PRINCIPALES TEORIAS DE LA ADMINISTRACION</div>
-        <!-- Aquí se agregarían las tarjetas más adelante -->
+
+        <div class="container">
+            <!-- Aquí se agregarían las tarjetas -->
+        </div>
+
+        <div class="button-container">
+            <button class="button" onclick="prevCard()">Anterior</button>
+            <button class="button" onclick="nextCard()">Siguiente</button>
+        </div>
     </div>
+
+    <script>
+        let currentCardIndex1 = 0;
+        let currentCardIndex2 = 0;
+        let currentCardIndex3 = 0;
+
+        const cards1 = document.querySelectorAll('#card1, #card2, #card3');
+        const cards2 = document.querySelectorAll('#card4, #card5');
+        const cards3 = document.querySelectorAll('#card6, #card7');
+
+        function showCard(cards, currentIndex) {
+            cards.forEach((card, index) => {
+                card.classList.remove('active'); // Ocultar todas las cartas
+                if (index === currentIndex) {
+                    card.classList.add('active'); // Mostrar la carta activa
+                }
+            });
+        }
+
+        function nextCard() {
+            currentCardIndex1 = (currentCardIndex1 + 1) % cards1.length; // Cambiar índice de la primera columna
+            currentCardIndex2 = (currentCardIndex2 + 1) % cards2.length; // Cambiar índice de la segunda columna
+            currentCardIndex3 = (currentCardIndex3 + 1) % cards3.length; // Cambiar índice de la tercera columna
+            showCard(cards1, currentCardIndex1);
+            showCard(cards2, currentCardIndex2);
+            showCard(cards3, currentCardIndex3);
+        }
+
+        function prevCard() {
+            currentCardIndex1 = (currentCardIndex1 - 1 + cards1.length) % cards1.length; // Cambiar índice de la primera columna
+            currentCardIndex2 = (currentCardIndex2 - 1 + cards2.length) % cards2.length; // Cambiar índice de la segunda columna
+            currentCardIndex3 = (currentCardIndex3 - 1 + cards3.length) % cards3.length; // Cambiar índice de la tercera columna
+            showCard(cards1, currentCardIndex1);
+            showCard(cards2, currentCardIndex2);
+            showCard(cards3, currentCardIndex3);
+        }
+
+        // Cambiar automáticamente cada 7 segundos
+        setInterval(nextCard, 7000);
+    </script>
 
 </body>
 </html>

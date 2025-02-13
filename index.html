@@ -12,6 +12,23 @@
             background: url('adm/fondo.jpg') repeat; /* Fondo de la página con imagen repetida */
             color: #333;
         }
+        .navbar {
+            display: flex; /* Usar flexbox para la barra de navegación */
+            justify-content: center; /* Centrar los elementos */
+            margin-bottom: 20px; /* Espacio debajo de la barra de navegación */
+        }
+        .nav-link {
+            margin: 0 15px; /* Espacio entre los enlaces */
+            text-decoration: none; /* Sin subrayado */
+            color: white; /* Color del texto */
+            background-color: #007BFF; /* Fondo celeste oscuro */
+            padding: 10px 20px; /* Espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        }
+        .nav-link:hover {
+            background-color: #0056b3; /* Color más oscuro al pasar el cursor */
+        }
         .title {
             text-align: center; /* Centrar el texto */
             font-size: 48px; /* Tamaño de letra grande */
@@ -163,9 +180,14 @@
 </head>
 <body>
 
+    <div class="navbar">
+        <a href="#teoria" class="nav-link">TEORÍA</a>
+        <a href="#cuestionario" class="nav-link">CUESTIONARIO</a>
+    </div>
+
     <div class="title">ADMINISTRACION Y ORGANIZACIONES</div>
 
-    <div class="section">
+    <div class="section" id="teoria">
         <div class="intro-title">Introducción</div>
         <p class="intro-text">Es un proceso fundamental para cualquier organización pública o privada, con y sin fines de lucro. Su aplicación eficiente permite alcanzar los objetivos establecidos. A lo largo de la historia se han desarrollado varias teorías y enfoques administrativos, que buscan optimizar el rendimiento y efectividad de la organización.</p>
 
@@ -368,6 +390,12 @@
                 <li>Fomenta la innovación y el crecimiento.</li>
             </ul>
         </div>
+    </div>
+
+    <div class="section" id="cuestionario">
+        <div class="intro-title">CUESTIONARIO</div>
+        <p class="intro-text">Aquí puedes agregar tu cuestionario de preguntas y respuestas. Puedes usar formularios o simplemente listar las preguntas.</p>
+        <!-- Aquí puedes agregar el contenido del cuestionario -->
     </div>
 
 </body>

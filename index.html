@@ -39,34 +39,43 @@
             border-radius: 10px; /* Bordes redondeados */
             margin-bottom: 20px; /* Espacio debajo del título */
         }
-        .carousel {
-            display: flex; /* Usar flexbox para alinear las cartas */
-            overflow: hidden; /* Ocultar el desbordamiento */
-            position: relative; /* Posición relativa para el control del carrusel */
+        .container {
+            display: flex; /* Usar flexbox para alinear las partes */
+            justify-content: space-between; /* Espacio entre columnas */
+            align-items: flex-start; /* Alinear al inicio */
         }
-        .card-container {
-            display: flex; /* Usar flexbox para alinear las cartas */
-            transition: transform 0.5s ease; /* Transición suave al mover las cartas */
+        .column {
+            position: relative; /* Posición relativa para superponer cartas */
+            width: 30%; /* Ancho de cada columna */
+            height: 200px; /* Altura fija para las columnas */
         }
         .card {
             background: #f9f9f9; /* Fondo de las cartas */
             border: 1px solid #ddd; /* Borde de las cartas */
             border-radius: 8px; /* Bordes redondeados */
-            width: 200px; /* Ancho fijo para las cartas */
+            width: 100%; /* Ancho completo para las cartas */
             text-align: center; /* Centrar texto */
             padding: 10px; /* Espaciado interno */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-            margin: 0 10px; /* Espacio entre las cartas */
-            opacity: 0.7; /* Opacidad inicial */
-            transition: opacity 0.3s; /* Transición suave para la opacidad */
+            opacity: 0; /* Inicialmente oculto */
+            transition: opacity 0.5s ease; /* Transición suave para la opacidad */
+            position: absolute; /* Posición absoluta para superponer cartas */
         }
-        .card:hover {
-            opacity: 1; /* Opacidad completa al pasar el mouse */
+        .card.active {
+            opacity: 1; /* Mostrar la carta activa */
         }
-        .row {
-            display: flex; /* Usar flexbox para alinear las filas */
-            justify-content: center; /* Centrar las filas */
-            margin-bottom: 20px; /* Espacio entre filas */
+        .button-container {
+            text-align: center; /* Centrar los botones */
+            margin-top: 10px; /* Espacio arriba de los botones */
+        }
+        .button {
+            background-color: #FF7F7F; /* Color del botón */
+            color: white; /* Color del texto del botón */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 10px 15px; /* Espaciado interno */
+            cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+            margin: 5px; /* Espacio alrededor del botón */
         }
     </style>
 </head>
@@ -77,73 +86,107 @@
     <div class="section">
         <div class="theories-title">PRINCIPALES TEORIAS DE LA ADMINISTRACION</div>
 
-        <!-- Primera fila con 3 cartas -->
-        <div class="row">
-            <div class="card-container" id="cardContainer1">
-                <div class="card">
+        <div class="container">
+            <!-- Primera columna -->
+            <div class="column">
+                <div class="card active" id="card1">
                     <img src="ruta/a/imagen1.jpg" alt="Autor 1"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 1</h4>
                     <p><strong>Concepto:</strong> Concepto del autor 1.</p>
                     <p><strong>Teorías:</strong> Teoría del autor 1.</p>
                     <p><strong>Principios:</strong> Principios del autor 1.</p>
                 </div>
-                <div class="card">
+                <div class="card" id="card2">
                     <img src="ruta/a/imagen2.jpg" alt="Autor 2"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 2</h4>
                     <p><strong>Concepto:</strong> Concepto del autor 2.</p>
                     <p><strong>Teorías:</strong> Teoría del autor 2.</p>
                     <p><strong>Principios:</strong> Principios del autor 2.</p>
                 </div>
-                <div class="card">
+            </div>
+
+            <!-- Segunda columna -->
+            <div class="column">
+                <div class="card active" id="card3">
                     <img src="ruta/a/imagen3.jpg" alt="Autor 3"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 3</h4>
                     <p><strong>Concepto:</strong> Concepto del autor 3.</p>
                     <p><strong>Teorías:</strong> Teoría del autor 3.</p>
                     <p><strong>Principios:</strong> Principios del autor 3.</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- Segunda fila con 2 cartas -->
-        <div class="row">
-            <div class="card-container" id="cardContainer2">
-                <div class="card">
+                <div class="card" id="card4">
                     <img src="ruta/a/imagen4.jpg" alt="Autor 4"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 4</h4>
                     <p><strong>Concepto:</strong> Concepto del autor 4.</p>
                     <p><strong>Teorías:</strong> Teoría del autor 4.</p>
                     <p><strong>Principios:</strong> Principios del autor 4.</p>
                 </div>
-                <div class="card">
+            </div>
+
+            <!-- Tercera columna -->
+            <div class="column">
+                <div class="card active" id="card5">
                     <img src="ruta/a/imagen5.jpg" alt="Autor 5"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 5</h4>
                     <p><strong>Concepto:</strong> Concepto del autor 5.</p>
                     <p><strong>Teorías:</strong> Teoría del autor 5.</p>
                     <p><strong>Principios:</strong> Principios del autor 5.</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- Tercera fila con 2 cartas -->
-        <div class="row">
-            <div class="card-container" id="cardContainer3">
-                <div class="card">
+                <div class="card" id="card6">
                     <img src="ruta/a/imagen6.jpg" alt="Autor 6"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Autor 6</h4>
                     <p><strong>Concepto:</strong> Concepto del autor 6.</p>
                     <p><strong>Teorías:</strong> Teoría del autor 6.</p>
                     <p><strong>Principios:</strong> Principios del autor 6.</p>
                 </div>
-                <div class="card">
-                    <img src="ruta/a/imagen7.jpg" alt="Autor 7"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                    <h4>Autor 7</h4>
-                    <p><strong>Concepto:</strong> Concepto del autor 7.</p>
-                    <p><strong>Teorías:</strong> Teoría del autor 7.</p>
-                    <p><strong>Principios:</strong> Principios del autor 7.</p>
-                </div>
             </div>
         </div>
+
+        <div class="button-container">
+            <button class="button" onclick="prevCard()">Anterior</button>
+            <button class="button" onclick="nextCard()">Siguiente</button>
+        </div>
     </div>
+
+    <script>
+        let currentCardIndex1 = 0;
+        let currentCardIndex2 = 0;
+        let currentCardIndex3 = 0;
+
+        const cards1 = document.querySelectorAll('#card1, #card2');
+        const cards2 = document.querySelectorAll('#card3, #card4');
+        const cards3 = document.querySelectorAll('#card5, #card6');
+
+        function showCard(cards, currentIndex) {
+            cards.forEach((card, index) => {
+                card.classList.remove('active'); // Ocultar todas las cartas
+                if (index === currentIndex) {
+                    card.classList.add('active'); // Mostrar la carta activa
+                }
+            });
+        }
+
+        function nextCard() {
+            currentCardIndex1 = (currentCardIndex1 + 1) % cards1.length; // Cambiar índice de la primera columna
+            currentCardIndex2 = (currentCardIndex2 + 1) % cards2.length; // Cambiar índice de la segunda columna
+            currentCardIndex3 = (currentCardIndex3 + 1) % cards3.length; // Cambiar índice de la tercera columna
+            showCard(cards1, currentCardIndex1);
+            showCard(cards2, currentCardIndex2);
+            showCard(cards3, currentCardIndex3);
+        }
+
+        function prevCard() {
+            currentCardIndex1 = (currentCardIndex1 - 1 + cards1.length) % cards1.length; // Cambiar índice de la primera columna
+            currentCardIndex2 = (currentCardIndex2 - 1 + cards2.length) % cards2.length; // Cambiar índice de la segunda columna
+            currentCardIndex3 = (currentCardIndex3 - 1 + cards3.length) % cards3.length; // Cambiar índice de la tercera columna
+            showCard(cards1, currentCardIndex1);
+            showCard(cards2, currentCardIndex2);
+            showCard(cards3, currentCardIndex3);
+        }
+
+        // Cambiar automáticamente cada 3 segundos
+        setInterval(nextCard, 3000);
+    </script>
 
 </body>
 </html>

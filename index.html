@@ -47,7 +47,7 @@
         .column {
             position: relative; /* Posición relativa para superponer cartas */
             width: 30%; /* Ancho de cada columna */
-            height: 200px; /* Altura fija para las columnas */
+            height: auto; /* Altura automática para las columnas */
         }
         .card {
             background: #f9f9f9; /* Fondo de las cartas */
@@ -66,6 +66,12 @@
         }
         .card:hover {
             background-color: #e0e0e0; /* Color más oscuro al pasar el cursor */
+        }
+        .card img {
+            width: 100%; /* Ancho completo para las imágenes */
+            height: 150px; /* Altura fija para las imágenes */
+            object-fit: cover; /* Mantener la proporción de la imagen */
+            border-radius: 8px; /* Bordes redondeados para las imágenes */
         }
         .button-container {
             text-align: center; /* Centrar los botones */
@@ -118,12 +124,7 @@
                     14 principios administrativos, entre ellos: División del trabajo, Autoridad, Unidad de mando, Jerarquía y Coordinación.</p>
                     <p><strong>Principio:</strong> 5 funciones del directivo: Planificación, Organización, Coordinación, Dirección y Control.</p>
                 </div>
-            </div>
-
-            <!-- Segunda columna -->
-            <div class="column">
-                <div class="column-title">ENFOQUE DEL COMPORTAMIENTO</div>
-                <div class="card active" id="card3">
+                <div class="card" id="card3">
                     <img src="adm/weber.jpg" alt="Max Weber"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Max Weber (1864-1920)</h4>
                     <p><strong>Concepto:</strong> Plantea la burocracia como una estructura organizacional basada en normas, jerarquía y división del trabajo.</p>
@@ -134,7 +135,12 @@
                     3. Racional legal: Basada en normas y procedimientos.</p>
                     <p><strong>Principio:</strong> Jerarquía, reglas escritas, profesionalización y separación entre propiedad y administración.</p>
                 </div>
-                <div class="card" id="card4">
+            </div>
+
+            <!-- Segunda columna -->
+            <div class="column">
+                <div class="column-title">ENFOQUE DEL COMPORTAMIENTO</div>
+                <div class="card active" id="card4">
                     <img src="adm/mayo.jpg" alt="Elton Mayo"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Elton Mayo (1880-1949)</h4>
                     <p><strong>Concepto:</strong> Introduce la importancia de los factores sociales y psicológicos en la productividad.</p>
@@ -142,12 +148,7 @@
                     Estudios de Hawthorne: Motivación influenciada por relaciones humanas y condiciones sociales.</p>
                     <p><strong>Principio:</strong> No hay principios</p>
                 </div>
-            </div>
-
-            <!-- Tercera columna -->
-            <div class="column">
-                <div class="column-title">ENFOQUE MODERNO</div>
-                <div class="card active" id="card5">
+                <div class="card" id="card5">
                     <img src="adm/maslow.jpg" alt="Abraham Maslow"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Abraham Maslow (1908-1970)</h4>
                     <p><strong>Concepto:</strong> La motivación se basa en una jerarquía de necesidades humanas.</p>
@@ -155,12 +156,29 @@
                     Pirámide de Maslow: Fisiológicas, Seguridad, Sociales, Estima y Autorrealización.</p>
                     <p><strong>Principio:</strong> No hay principio</p>
                 </div>
-                <div class="card" id="card6">
+            </div>
+
+            <!-- Tercera columna -->
+            <div class="column">
+                <div class="column-title">ENFOQUE MODERNO</div>
+                <div class="card active" id="card6">
                     <img src="adm/von.jpg" alt="Ludwig von Bertalanffy"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <h4>Ludwig von Bertalanffy (1901-1972)</h4>
                     <p><strong>Concepto:</strong> La organización es un sistema abierto que interactúa con su entorno.</p>
                     <p><strong>Teoría:</strong><br>
                     Elementos del sistema: Entrada, Proceso, Salida, Retroalimentación y Ambiente.</p>
+                    <p><strong>Principio:</strong> No hay principio</p>
+                </div>
+                <div class="card" id="card7">
+                    <img src="adm/contingencial.jpg" alt="Enfoque Contingencial"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Enfoque Contingencial</h4>
+                    <p><strong>Autor:</strong> Paul Lawrence, Jay Lorsch, Joan Woodward.</p>
+                    <p><strong>Concepto:</strong> No hay una única forma de administrar; la estructura debe adaptarse al contexto.</p>
+                    <p><strong>Teoría:</strong><br>
+                    - Variables clave:<br>
+                    1. Ambiente: Estable o inestable.<br>
+                    2. Tecnología: Impacta la estructura organizativa.<br>
+                    3. Estructura organizativa: Debe ajustarse a condiciones externas.</p>
                     <p><strong>Principio:</strong> No hay principio</p>
                 </div>
             </div>
@@ -177,9 +195,9 @@
         let currentCardIndex2 = 0;
         let currentCardIndex3 = 0;
 
-        const cards1 = document.querySelectorAll('#card1, #card2');
-        const cards2 = document.querySelectorAll('#card3, #card4');
-        const cards3 = document.querySelectorAll('#card5, #card6');
+        const cards1 = document.querySelectorAll('#card1, #card2, #card3');
+        const cards2 = document.querySelectorAll('#card4, #card5');
+        const cards3 = document.querySelectorAll('#card6, #card7');
 
         function showCard(cards, currentIndex) {
             cards.forEach((card, index) => {

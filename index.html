@@ -31,6 +31,9 @@
             max-width: 1200px; /* Ancho máximo del contenedor */
             margin: 0 auto; /* Centrar el contenedor */
             min-height: 800px; /* Aumentar la altura mínima para hacer el cuadro más largo */
+            display: flex; /* Usar flexbox para alinear el contenido */
+            flex-direction: column; /* Alinear en columna */
+            justify-content: space-between; /* Espacio entre el contenido y los botones */
         }
         .theories-title {
             text-align: center; /* Centrar el texto */
@@ -46,6 +49,7 @@
             display: flex; /* Usar flexbox para alinear las partes */
             justify-content: space-between; /* Espacio entre columnas */
             align-items: flex-start; /* Alinear al inicio */
+            flex-grow: 1; /* Permitir que el contenedor crezca */
         }
         .column {
             position: relative; /* Posición relativa para superponer cartas */

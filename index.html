@@ -58,7 +58,7 @@
             background: #f9f9f9; /* Fondo de las cartas */
             border: 1px solid #ddd; /* Borde de las cartas */
             border-radius: 8px; /* Bordes redondeados */
-            width: 48%; /* Ancho de la tarjeta */
+            width: 100%; /* Ancho de la tarjeta */
             margin: 10px; /* Espacio entre tarjetas */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
             transition: background-color 0.3s; /* Transición suave para el color de fondo */
@@ -81,6 +81,7 @@
         .card-content h4 {
             color: #003366; /* Azul marino claro para el título */
             margin: 0; /* Sin margen */
+            text-align: center; /* Centrar el subtítulo */
         }
         .card-content p {
             margin: 5px 0; /* Margen entre párrafos */
@@ -96,19 +97,6 @@
             margin-top: 5px; /* Espacio arriba del nombre */
             font-weight: bold; /* Negrita para el nombre */
             color: #003366; /* Azul marino claro para el nombre */
-        }
-        .button-container {
-            text-align: center; /* Centrar los botones */
-            margin-top: 20px; /* Espacio arriba de los botones */
-        }
-        .button {
-            background-color: #FF7F7F; /* Color del botón */
-            color: white; /* Color del texto del botón */
-            border: none; /* Sin borde */
-            border-radius: 5px; /* Bordes redondeados */
-            padding: 10px 15px; /* Espaciado interno */
-            cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
-            margin: 5px; /* Espacio alrededor del botón */
         }
         .column-title {
             text-align: center; /* Centrar el texto del título de la columna */
@@ -133,6 +121,7 @@
                     <img src="adm/taylor.jpg" alt="Frederick Taylor"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <div class="card-content">
                         <h4>ADMINISTRACION CIENTIFICA</h4>
+                        <p><strong>Autor:</strong> Frederick Taylor</p>
                         <p><strong>Concepto:</strong> Se basa en la racionalización del trabajo para aumentar la eficiencia y la productividad mediante métodos científicos.</p>
                         <p><strong>Teoría:</strong><br>
                         - Planificación: Uso de procedimientos científicos en lugar de improvisación.<br>
@@ -146,6 +135,7 @@
                     <img src="adm/fayol.jpg" alt="Henri Fayol"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <div class="card-content">
                         <h4>TEORIA DEL PROCESO ADMINISTRATIVO</h4>
+                        <p><strong>Autor:</strong> Henri Fayol</p>
                         <p><strong>Concepto:</strong> La administración es un proceso basado en principios generales aplicables a cualquier organización.</p>
                         <p><strong>Teoría:</strong><br>
                         14 principios administrativos, entre ellos: División del trabajo, Autoridad, Unidad de mando, Jerarquía y Coordinación.</p>
@@ -158,6 +148,7 @@
                     <img src="adm/weber.jpg" alt="Max Weber"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <div class="card-content">
                         <h4>TEORIA BUROCRATICA</h4>
+                        <p><strong>Autor:</strong> Max Weber</p>
                         <p><strong>Concepto:</strong> Plantea la burocracia como una estructura organizacional basada en normas, jerarquía y división del trabajo.</p>
                         <p><strong>Teoría:</strong><br>
                         3 tipos de autoridad:<br>
@@ -178,23 +169,23 @@
                     <img src="adm/mayo.jpg" alt="Elton Mayo"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <div class="card-content">
                         <h4>RELACIONES HUMANAS</h4>
+                        <p><strong>Autor:</strong> Elton Mayo</p>
                         <p><strong>Concepto:</strong> Introduce la importancia de los factores sociales y psicológicos en la productividad.</p>
                         <p><strong>Teoría:</strong><br>
                         Estudios de Hawthorne: Motivación influenciada por relaciones humanas y condiciones sociales.</p>
                         <p><strong>Principio:</strong> No hay principios</p>
                     </div>
-                    <div class="author-name">Elton Mayo</div>
                 </div>
                 <div class="card">
                     <img src="adm/maslow.jpg" alt="Abraham Maslow"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <div class="card-content">
                         <h4>TEORIA DE LA MOTIVACION</h4>
+                        <p><strong>Autor:</strong> Abraham Maslow</p>
                         <p><strong>Concepto:</strong> La motivación se basa en una jerarquía de necesidades humanas.</p>
                         <p><strong>Teoría:</strong><br>
                         Pirámide de Maslow: Fisiológicas, Seguridad, Sociales, Estima y Autorrealización.</p>
                         <p><strong>Principio:</strong> No hay principio</p>
                     </div>
-                    <div class="author-name">Abraham Maslow</div>
                 </div>
             </div>
         </div>
@@ -207,12 +198,12 @@
                     <img src="adm/von.jpg" alt="Ludwig von Bertalanffy"> <!-- Cambia esta ruta por la de la imagen del autor -->
                     <div class="card-content">
                         <h4>ENFOQUE DE SISTEMAS</h4>
+                        <p><strong>Autor:</strong> Ludwig von Bertalanffy</p>
                         <p><strong>Concepto:</strong> La organización es un sistema abierto que interactúa con su entorno.</p>
                         <p><strong>Teoría:</strong><br>
                         Elementos del sistema: Entrada, Proceso, Salida, Retroalimentación y Ambiente.</p>
                         <p><strong>Principio:</strong> No hay principio</p>
                     </div>
-                    <div class="author-name">Ludwig von Bertalanffy</div>
                 </div>
                 <div class="card">
                     <img src="adm/contingencial.jpg" alt="Enfoque Contingencial"> <!-- Cambia esta ruta por la de la imagen del autor -->
@@ -227,7 +218,6 @@
                         3. Estructura organizativa: Debe ajustarse a condiciones externas.</p>
                         <p><strong>Principio:</strong> No hay principio</p>
                     </div>
-                    <div class="author-name">Paul Lawrence, Jay Lorsch, Joan Woodward</div>
                 </div>
             </div>
         </div>

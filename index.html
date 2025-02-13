@@ -22,8 +22,8 @@
         }
         .card {
             display: inline-block; /* Mostrar como fichas */
-            width: 200px; /* Ancho de la tarjeta */
-            height: 100px; /* Altura de la tarjeta */
+            width: 300px; /* Ancho de la tarjeta */
+            height: 150px; /* Altura de la tarjeta */
             margin: 10px; /* Espacio entre tarjetas */
             border-radius: 8px; /* Bordes redondeados */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
@@ -33,11 +33,13 @@
             background-color: red; /* Color de fondo para preguntas */
             color: white; /* Color de texto para preguntas */
             padding: 15px; /* Espaciado interno */
+            height: 100%; /* Altura completa */
         }
         .answer {
             background-color: blue; /* Color de fondo para respuestas */
             color: white; /* Color de texto para respuestas */
             padding: 15px; /* Espaciado interno */
+            height: 100%; /* Altura completa */
         }
         .carousel {
             display: flex; /* Usar flexbox para el carrusel */
@@ -47,6 +49,7 @@
         .carousel-inner {
             display: flex; /* Usar flexbox para alinear las tarjetas en fila */
             transition: transform 0.5s ease; /* Transición suave para el movimiento */
+            will-change: transform; /* Mejora el rendimiento */
         }
         .carousel-button {
             position: absolute; /* Posicionar los botones */
@@ -104,7 +107,7 @@
 
 <script>
     let currentIndex = 0; // Índice actual del carrusel
-    const totalCards = 3; // Cambia esto al número total de preguntas/respuestas
+    const totalCards = 6; // Cambia esto al número total de preguntas/respuestas
 
     function moveSlide(direction) {
         const carouselInner = document.getElementById('carouselInner');
@@ -118,7 +121,7 @@
         }
 
         // Mover el carrusel
-        const offset = -currentIndex * 400; // Cambia 400 al ancho total de las tarjetas
+        const offset = -currentIndex * 320; // Cambia 320 al ancho total de las tarjetas
         carouselInner.style.transform = `translateX(${offset}px)`;
     }
 

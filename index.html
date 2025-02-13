@@ -29,9 +29,9 @@
             border-radius: 8px;
             background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
         }
-        .intro-title, .definition-title, .theories-title {
+        .theories-title {
             text-align: center; /* Centrar el texto */
-            font-size: 32px; /* Tamaño de letra para el título */
+            font-size: 32px; /* Tamaño de letra para el título de teorías */
             font-weight: bold; /* Hacer la letra más gruesa */
             color: white; /* Color de letra blanco */
             background-color: #FF7F7F; /* Fondo rojo suave */
@@ -39,38 +39,14 @@
             border-radius: 10px; /* Bordes redondeados */
             margin-bottom: 20px; /* Espacio debajo del título */
         }
-        .intro-text, .definition-text {
-            text-align: center; /* Centrar el texto */
-            font-size: 20px; /* Tamaño de letra para la introducción */
-            margin-bottom: 20px; /* Espacio debajo del texto */
-        }
-        .grid {
-            display: flex; /* Usar flexbox para alinear los cuadros uno al lado del otro */
-            justify-content: space-between; /* Espacio entre los cuadros */
-            gap: 20px; /* Espacio entre los cuadros */
-        }
-        .box {
-            background: #f9f9f9; /* Fondo de los cuadros */
-            border: 1px solid #ddd; /* Borde de los cuadros */
-            border-radius: 8px; /* Bordes redondeados */
-            padding: 15px; /* Espaciado interno */
-            text-align: left; /* Alinear texto a la izquierda */
-            flex: 1; /* Hacer que los cuadros ocupen el mismo espacio */
-        }
-        .nature-title {
-            color: blue; /* Color azul para el subtítulo de naturaleza */
-            font-weight: bold; /* Negrita para el subtítulo */
-            font-size: 24px; /* Tamaño de letra para el subtítulo */
-            margin-bottom: 10px; /* Espacio debajo del subtítulo */
-        }
-        .sub-title {
-            font-weight: bold; /* Negrita para los subtítulos dentro del cuadro */
+        .carousel {
+            display: flex; /* Usar flexbox para alinear las cartas */
+            overflow: hidden; /* Ocultar el desbordamiento */
+            position: relative; /* Posición relativa para el control del carrusel */
         }
         .card-container {
             display: flex; /* Usar flexbox para alinear las cartas */
-            flex-wrap: wrap; /* Permitir que las cartas se envuelvan */
-            justify-content: space-around; /* Espacio entre las cartas */
-            gap: 20px; /* Espacio entre las cartas */
+            transition: transform 0.5s ease; /* Transición suave al mover las cartas */
         }
         .card {
             background: #f9f9f9; /* Fondo de las cartas */
@@ -80,6 +56,12 @@
             text-align: center; /* Centrar texto */
             padding: 10px; /* Espaciado interno */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            margin: 0 10px; /* Espacio entre las cartas */
+            opacity: 0.7; /* Opacidad inicial */
+            transition: opacity 0.3s; /* Transición suave para la opacidad */
+        }
+        .card:hover {
+            opacity: 1; /* Opacidad completa al pasar el mouse */
         }
         .card img {
             max-width: 100%; /* Imagen ajustada al ancho de la carta */
@@ -92,6 +74,15 @@
         .card p {
             margin: 5px 0; /* Espaciado para los párrafos */
         }
+        .button {
+            background-color: #FF7F7F; /* Color del botón */
+            color: white; /* Color del texto del botón */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 10px 15px; /* Espaciado interno */
+            cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+            margin: 20px; /* Espacio alrededor del botón */
+        }
     </style>
 </head>
 <body>
@@ -99,103 +90,96 @@
     <div class="title">ADMINISTRACION Y ORGANIZACIONES</div>
 
     <div class="section">
-        <div class="intro-title">Introducción</div>
-        <p class="intro-text">Es un proceso fundamental para cualquier organización pública o privada, con y sin fines de lucro. Su aplicación eficiente permite alcanzar los objetivos establecidos. A lo largo de la historia se han desarrollado varias teorías y enfoques administrativos, que buscan optimizar el rendimiento y efectividad de la organización.</p>
-
-        <div class="grid">
-            <div class="box">
-                <h3>Administración proviene de la siguiente unión de palabras:</h3>
-                <ul>
-                    <li>Ad = Hacia</li>
-                    <li>Minister = Subordinación</li>
-                </ul>
-            </div>
-            <div class="box">
-                <h3>Diferencia Entre Organización y Empresa</h3>
-                <ul>
-                    <li>Organización: Busca cumplir objetivos</li>
-                    <li>Empresa: Busca maximizar ganancias</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="definition-title">DEFINICION Y NATURALEZA</div>
-        <p class="definition-text">Henry Fayol: “preveer, organizar, mandar, coordinar y controlar”</p>
-        <p class="definition-text"><span class="sub-title">Komt’s y Odonel:</span> “dirección de un organismo social, y su efectividad para alcanzar los objetivos, basados en la habilidad de conducir a sus integrantes”</p>
-        <p class="definition-text">En resumen, administrar no son únicamente planificar, organizar, dirigir y controlar, sino es marcar un conjunto de decisiones y acciones que se apliquen en varias situaciones de la organización.</p>
-
-        <div class="box">
-            <div class="nature-title">NATURALEZA</div>
-            <ul>
-                <li><span class="sub-title">Ciencia:</span> Análisis dinámico de situaciones para la toma de decisiones</li>
-                <li><span class="sub-title">Arte:</span> Involucra la visión, creatividad y habilidad para guiar y motivar al equipo</li>
-                <li><span class="sub-title">Tecnología:</span> Implementación de procedimientos, prácticos operacionales y específicos</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section">
         <div class="theories-title">PRINCIPALES TEORIAS DE LA ADMINISTRACION</div>
 
-        <div class="card-container">
-            <!-- ENFOQUE CLASICO -->
-            <div class="card">
-                <img src="ruta/a/imagen1.jpg" alt="Autor 1"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <h4>Autor 1</h4>
-                <p><strong>Concepto:</strong> Concepto del autor 1.</p>
-                <p><strong>Teorías:</strong> Teoría del autor 1.</p>
-                <p><strong>Principios:</strong> Principios del autor 1.</p>
-            </div>
-            <div class="card">
-                <img src="ruta/a/imagen2.jpg" alt="Autor 2"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <h4>Autor 2</h4>
-                <p><strong>Concepto:</strong> Concepto del autor 2.</p>
-                <p><strong>Teorías:</strong> Teoría del autor 2.</p>
-                <p><strong>Principios:</strong> Principios del autor 2.</p>
-            </div>
-            <div class="card">
-                <img src="ruta/a/imagen3.jpg" alt="Autor 3"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <h4>Autor 3</h4>
-                <p><strong>Concepto:</strong> Concepto del autor 3.</p>
-                <p><strong>Teorías:</strong> Teoría del autor 3.</p>
-                <p><strong>Principios:</strong> Principios del autor 3.</p>
-            </div>
+        <div class="carousel">
+            <div class="card-container" id="cardContainer">
+                <!-- ENFOQUE CLASICO -->
+                <div class="card">
+                    <img src="ruta/a/imagen1.jpg" alt="Autor 1"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Autor 1</h4>
+                    <p><strong>Concepto:</strong> Concepto del autor 1.</p>
+                    <p><strong>Teorías:</strong> Teoría del autor 1.</p>
+                    <p><strong>Principios:</strong> Principios del autor 1.</p>
+                </div>
+                <div class="card">
+                    <img src="ruta/a/imagen2.jpg" alt="Autor 2"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Autor 2</h4>
+                    <p><strong>Concepto:</strong> Concepto del autor 2.</p>
+                    <p><strong>Teorías:</strong> Teoría del autor 2.</p>
+                    <p><strong>Principios:</strong> Principios del autor 2.</p>
+                </div>
+                <div class="card">
+                    <img src="ruta/a/imagen3.jpg" alt="Autor 3"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Autor 3</h4>
+                    <p><strong>Concepto:</strong> Concepto del autor 3.</p>
+                    <p><strong>Teorías:</strong> Teoría del autor 3.</p>
+                    <p><strong>Principios:</strong> Principios del autor 3.</p>
+                </div>
 
-            <!-- ENFOQUE DEL COMPORTAMIENTO -->
-            <div class="card">
-                <img src="ruta/a/imagen4.jpg" alt="Autor 4"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <h4>Autor 4</h4>
-                <p><strong>Concepto:</strong> Concepto del autor 4.</p>
-                <p><strong>Teorías:</strong> Teoría del autor 4.</p>
-                <p><strong>Principios:</strong> Principios del autor 4.</p>
-            </div>
-            <div class="card">
-                <img src="ruta/a/imagen5.jpg" alt="Autor 5"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <h4>Autor 5</h4>
-                <p><strong>Concepto:</strong> Concepto del autor 5.</p>
-                <p><strong>Teorías:</strong> Teoría del autor 5.</p>
-                <p><strong>Principios:</strong> Principios del autor 5.</p>
-            </div>
+                <!-- ENFOQUE DEL COMPORTAMIENTO -->
+                <div class="card">
+                    <img src="ruta/a/imagen4.jpg" alt="Autor 4"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Autor 4</h4>
+                    <p><strong>Concepto:</strong> Concepto del autor 4.</p>
+                    <p><strong>Teorías:</strong> Teoría del autor 4.</p>
+                    <p><strong>Principios:</strong> Principios del autor 4.</p>
+                </div>
+                <div class="card">
+                    <img src="ruta/a/imagen5.jpg" alt="Autor 5"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Autor 5</h4>
+                    <p><strong>Concepto:</strong> Concepto del autor 5.</p>
+                    <p><strong>Teorías:</strong> Teoría del autor 5.</p>
+                    <p><strong>Principios:</strong> Principios del autor 5.</p>
+                </div>
 
-            <!-- ENFOQUES MODERNOS -->
-            <div class="card">
-                <img src="ruta/a/imagen6.jpg" alt="Autor 6"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <h4>Autor 6</h4>
-                <p><strong>Concepto:</strong> Concepto del autor 6.</p>
-                <p><strong>Teorías:</strong> Teoría del autor 6.</p>
-                <p><strong>Principios:</strong> Principios del autor 6.</p>
-            </div>
-            <div class="card">
-                <img src="ruta/a/imagen7.jpg" alt="Autor 7"> <!-- Cambia esta ruta por la de la imagen del autor -->
-                <h4>Autor 7</h4>
-                <p><strong>Concepto:</strong> Concepto del autor 7.</p>
-                <p><strong>Teorías:</strong> Teoría del autor 7.</p>
-                <p><strong>Principios:</strong> Principios del autor 7.</p>
+                <!-- ENFOQUES MODERNOS -->
+                <div class="card">
+                    <img src="ruta/a/imagen6.jpg" alt="Autor 6"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Autor 6</h4>
+                    <p><strong>Concepto:</strong> Concepto del autor 6.</p>
+                    <p><strong>Teorías:</strong> Teoría del autor 6.</p>
+                    <p><strong>Principios:</strong> Principios del autor 6.</p>
+                </div>
+                <div class="card">
+                    <img src="ruta/a/imagen7.jpg" alt="Autor 7"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Autor 7</h4>
+                    <p><strong>Concepto:</strong> Concepto del autor 7.</p>
+                    <p><strong>Teorías:</strong> Teoría del autor 7.</p>
+                    <p><strong>Principios:</strong> Principios del autor 7.</p>
+                </div>
             </div>
         </div>
+
+        <button class="button" onclick="prevCard()">Anterior</button>
+        <button class="button" onclick="nextCard()">Siguiente</button>
     </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const cardContainer = document.getElementById('cardContainer');
+            const cards = document.querySelectorAll('.card');
+            const totalCards = cards.length;
+
+            // Calcular el desplazamiento
+            const offset = -currentIndex * (220); // 200px de ancho + 20px de margen
+            cardContainer.style.transform = `translateX(${offset}px)`;
+        }
+
+        function nextCard() {
+            const totalCards = document.querySelectorAll('.card').length;
+            currentIndex = (currentIndex + 1) % totalCards; // Aumentar el índice y volver al inicio si es necesario
+            updateCarousel();
+        }
+
+        function prevCard() {
+            const totalCards = document.querySelectorAll('.card').length;
+            currentIndex = (currentIndex - 1 + totalCards) % totalCards; // Disminuir el índice y volver al final si es necesario
+            updateCarousel();
+        }
+    </script>
 
 </body>
 </html>

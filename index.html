@@ -24,13 +24,13 @@
         }
         .section {
             margin-bottom: 40px; /* Espacio debajo de cada sección */
-            padding: 40px; /* Espaciado interno */
+            padding: 40px; /* Aumentar el padding para hacer el cuadro más grande */
             border: 1px solid #4E3B31; /* Borde café */
             border-radius: 8px;
             background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
             max-width: 1200px; /* Ancho máximo del contenedor */
             margin: 0 auto; /* Centrar el contenedor */
-            min-height: 500px; /* Altura mínima para hacer el cuadro más largo */
+            min-height: 600px; /* Aumentar la altura mínima para hacer el cuadro más largo */
         }
         .theories-title {
             text-align: center; /* Centrar el texto */
@@ -78,7 +78,7 @@
         }
         .button-container {
             text-align: center; /* Centrar los botones */
-            margin-top: 10px; /* Espacio arriba de los botones */
+            margin-top: 20px; /* Espacio arriba de los botones */
         }
         .button {
             background-color: #FF7F7F; /* Color del botón */
@@ -105,7 +105,86 @@
         <div class="theories-title">PRINCIPALES TEORIAS DE LA ADMINISTRACION</div>
 
         <div class="container">
-            <!-- Aquí se agregarían las tarjetas -->
+            <!-- Primera columna -->
+            <div class="column">
+                <div class="column-title">ENFOQUE CLASICO</div>
+                <div class="card active" id="card1">
+                    <img src="adm/taylor.jpg" alt="Frederick Taylor"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Frederick Taylor (1856-1915)</h4>
+                    <p><strong>Concepto:</strong> Se basa en la racionalización del trabajo para aumentar la eficiencia y la productividad mediante métodos científicos.</p>
+                    <p><strong>Teoría:</strong><br>
+                    - Planificación: Uso de procedimientos científicos en lugar de improvisación.<br>
+                    - Preparación: Selección y formación de trabajadores.<br>
+                    - Control: Supervisión constante para garantizar estándares.<br>
+                    - Ejecución: División clara entre planeación y ejecución.</p>
+                    <p><strong>Principio:</strong> No hay principio</p>
+                </div>
+                <div class="card" id="card2">
+                    <img src="adm/fayol.jpg" alt="Henri Fayol"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Henri Fayol (1841-1925)</h4>
+                    <p><strong>Concepto:</strong> La administración es un proceso basado en principios generales aplicables a cualquier organización.</p>
+                    <p><strong>Teoría:</strong><br>
+                    14 principios administrativos, entre ellos: División del trabajo, Autoridad, Unidad de mando, Jerarquía y Coordinación.</p>
+                    <p><strong>Principio:</strong> 5 funciones del directivo: Planificación, Organización, Coordinación, Dirección y Control.</p>
+                </div>
+                <div class="card" id="card3">
+                    <img src="adm/weber.jpg" alt="Max Weber"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Max Weber (1864-1920)</h4>
+                    <p><strong>Concepto:</strong> Plantea la burocracia como una estructura organizacional basada en normas, jerarquía y división del trabajo.</p>
+                    <p><strong>Teoría:</strong><br>
+                    3 tipos de autoridad:<br>
+                    1. Tradicional: Basada en costumbre y herencia.<br>
+                    2. Carismática: Basada en las cualidades del líder.<br>
+                    3. Racional legal: Basada en normas y procedimientos.</p>
+                    <p><strong>Principio:</strong> Jerarquía, reglas escritas, profesionalización y separación entre propiedad y administración.</p>
+                </div>
+            </div>
+
+            <!-- Segunda columna -->
+            <div class="column">
+                <div class="column-title">ENFOQUE DEL COMPORTAMIENTO</div>
+                <div class="card active" id="card4">
+                    <img src="adm/mayo.jpg" alt="Elton Mayo"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Elton Mayo (1880-1949)</h4>
+                    <p><strong>Concepto:</strong> Introduce la importancia de los factores sociales y psicológicos en la productividad.</p>
+                    <p><strong>Teoría:</strong><br>
+                    Estudios de Hawthorne: Motivación influenciada por relaciones humanas y condiciones sociales.</p>
+                    <p><strong>Principio:</strong> No hay principios</p>
+                </div>
+                <div class="card" id="card5">
+                    <img src="adm/maslow.jpg" alt="Abraham Maslow"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Abraham Maslow (1908-1970)</h4>
+                    <p><strong>Concepto:</strong> La motivación se basa en una jerarquía de necesidades humanas.</p>
+                    <p><strong>Teoría:</strong><br>
+                    Pirámide de Maslow: Fisiológicas, Seguridad, Sociales, Estima y Autorrealización.</p>
+                    <p><strong>Principio:</strong> No hay principio</p>
+                </div>
+            </div>
+
+            <!-- Tercera columna -->
+            <div class="column">
+                <div class="column-title">ENFOQUE MODERNO</div>
+                <div class="card active" id="card6">
+                    <img src="adm/von.jpg" alt="Ludwig von Bertalanffy"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Ludwig von Bertalanffy (1901-1972)</h4>
+                    <p><strong>Concepto:</strong> La organización es un sistema abierto que interactúa con su entorno.</p>
+                    <p><strong>Teoría:</strong><br>
+                    Elementos del sistema: Entrada, Proceso, Salida, Retroalimentación y Ambiente.</p>
+                    <p><strong>Principio:</strong> No hay principio</p>
+                </div>
+                <div class="card" id="card7">
+                    <img src="adm/contingencial.jpg" alt="Enfoque Contingencial"> <!-- Cambia esta ruta por la de la imagen del autor -->
+                    <h4>Enfoque Contingencial</h4>
+                    <p><strong>Autor:</strong> Paul Lawrence, Jay Lorsch, Joan Woodward.</p>
+                    <p><strong>Concepto:</strong> No hay una única forma de administrar; la estructura debe adaptarse al contexto.</p>
+                    <p><strong>Teoría:</strong><br>
+                    - Variables clave:<br>
+                    1. Ambiente: Estable o inestable.<br>
+                    2. Tecnología: Impacta la estructura organizativa.<br>
+                    3. Estructura organizativa: Debe ajustarse a condiciones externas.</p>
+                    <p><strong>Principio:</strong> No hay principio</p>
+                </div>
+            </div>
         </div>
 
         <div class="button-container">

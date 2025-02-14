@@ -31,7 +31,7 @@
         }
         .title {
             text-align: center; /* Centrar el texto */
-            font-size: 52px; /* Tamaño de letra grande aumentado */
+            font-size: 48px; /* Tamaño de letra grande */
             font-weight: bold; /* Hacer la letra más gruesa */
             color: white; /* Color de letra blanco */
             background-color: #003366; /* Fondo azul intenso */
@@ -48,7 +48,7 @@
         }
         .intro-title, .definition-title {
             text-align: center; /* Centrar el texto */
-            font-size: 36px; /* Tamaño de letra para el título de introducción aumentado */
+            font-size: 32px; /* Tamaño de letra para el título de introducción */
             font-weight: bold; /* Hacer la letra más gruesa */
             color: white; /* Color de letra blanco */
             background-color: #007BFF; /* Fondo celeste oscuro */
@@ -58,7 +58,7 @@
         }
         .intro-text, .definition-text {
             text-align: center; /* Centrar el texto */
-            font-size: 22px; /* Tamaño de letra para la introducción aumentado */
+            font-size: 20px; /* Tamaño de letra para la introducción */
             margin-bottom: 20px; /* Espacio debajo del texto */
         }
         .grid {
@@ -85,7 +85,7 @@
         }
         .theories-title {
             text-align: center; /* Centrar el texto */
-            font-size: 36px; /* Tamaño de letra para el título de teorías aumentado */
+            font-size: 32px; /* Tamaño de letra para el título de teorías */
             font-weight: bold; /* Hacer la letra más gruesa */
             color: white; /* Color de letra blanco */
             background-color: #007BFF; /* Fondo celeste oscuro */
@@ -93,19 +93,78 @@
             border-radius: 10px; /* Bordes redondeados */
             margin-bottom: 20px; /* Espacio debajo del título */
         }
-        .quiz-card {
-            margin: 10px 0; /* Espacio entre las tarjetas de preguntas y respuestas */
-            padding: 15px; /* Espaciado interno */
+        .container {
+            display: flex; /* Usar flexbox para alinear las partes */
+            flex-direction: column; /* Alinear en columna */
+            align-items: center; /* Centrar las tarjetas */
+        }
+        .card-group {
+            display: flex; /* Usar flexbox para las tarjetas en cada grupo */
+            justify-content: space-between; /* Espacio entre tarjetas */
+            width: 90%; /* Ancho del grupo de tarjetas */
+            margin: 10px 0; /* Espacio entre grupos */
+        }
+        .card {
+            display: flex; /* Usar flexbox para la tarjeta */
+            background: #f9f9f9; /* Fondo de las cartas */
+            border: 1px solid #ddd; /* Borde de las cartas */
             border-radius: 8px; /* Bordes redondeados */
-            font-size: 20px; /* Tamaño de letra para preguntas y respuestas */
+            width: 100%; /* Ancho de la tarjeta */
+            margin: 10px; /* Espacio entre tarjetas */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+            user-select: text; /* Permitir selección de texto */
         }
-        .question {
-            background-color: white; /* Fondo blanco para preguntas */
-            color: blue; /* Texto azul para preguntas */
+        .card:hover {
+            background-color: #ADD8E6; /* Color celeste claro al pasar el cursor */
+            cursor: pointer; /* Cambiar cursor al pasar sobre la tarjeta */
         }
-        .answer {
-            background-color: blue; /* Fondo azul para respuestas */
-            color: white; /* Texto blanco para respuestas */
+        .card img {
+            width: 150px; /* Ancho de la imagen */
+            height: 150px; /* Altura de la imagen */
+            border-radius: 50%; /* Hacer la imagen ovalada */
+            margin-right: 10px; /* Espacio entre la imagen y el contenido */
+        }
+        .card-content {
+            padding: 10px; /* Espaciado interno para el contenido de la tarjeta */
+            flex-grow: 1; /* Permitir que el contenido crezca */
+        }
+        .card-content h4 {
+            color: #003366; /* Azul marino claro para el título */
+            margin: 0; /* Sin margen */
+            text-align: center; /* Centrar el subtítulo */
+        }
+        .card-content p {
+            margin: 5px 0; /* Margen entre párrafos */
+        }
+        .card-content strong {
+            color: #003366; /* Azul marino claro para los títulos de sección */
+            background-color: #e0f7fa; /* Fondo suave */
+            padding: 2px 4px; /* Espaciado interno */
+            border-radius: 4px; /* Bordes redondeados */
+        }
+        .author-name {
+            text-align: center; /* Centrar el nombre del autor */
+            margin-top: 5px; /* Espacio arriba del nombre */
+            font-weight: bold; /* Negrita para el nombre */
+            color: #003366; /* Azul marino claro para el nombre */
+        }
+        .column-title {
+            text-align: center; /* Centrar el texto del título de la columna */
+            font-weight: bold; /* Negrita para el título */
+            margin-bottom: 10px; /* Espacio debajo del título */
+            color: #333; /* Color del texto */
+        }
+        .example-title {
+            text-align: center; /* Centrar el texto */
+            font-size: 28px; /* Tamaño de letra para el título de ejemplo */
+            font-weight: bold; /* Hacer la letra más gruesa */
+            color: #003366; /* Color azul marino claro */
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+        .pathway {
+            text-align: center; /* Centrar el camino */
+            margin: 20px 0; /* Espacio arriba y abajo */
         }
         img {
             width: 100%; /* Ancho de la imagen */
@@ -116,6 +175,32 @@
         }
         img:hover {
             transform: scale(1.05); /* Agrandar la imagen al pasar el cursor */
+        }
+
+        /* Estilos para el cuestionario */
+        .quiz-section {
+            margin-top: 40px; /* Espacio encima de la sección de cuestionarios */
+        }
+        .quiz-card {
+            display: flex; /* Usar flexbox para la tarjeta de pregunta/respuesta */
+            justify-content: center; /* Centrar el contenido */
+            align-items: center; /* Centrar verticalmente */
+            width: 100%; /* Ancho completo */
+            margin: 10px 0; /* Espacio entre tarjetas */
+            border-radius: 8px; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar cursor al pasar sobre la tarjeta */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        }
+        .quiz-card.question {
+            background-color: white; /* Fondo blanco para preguntas */
+            color: blue; /* Color azul para el texto de preguntas */
+        }
+        .quiz-card.answer {
+            background-color: blue; /* Fondo azul para respuestas */
+            color: white; /* Color blanco para el texto de respuestas */
+        }
+        .quiz-card:hover {
+            background-color: #e0e0e0; /* Color gris claro al pasar el cursor sobre preguntas */
         }
     </style>
 </head>
@@ -481,8 +566,8 @@
             <h4>15. En qué se diferencia una organización desconcentrada a una descentralizada?</h4>
         </div>
         <div class="quiz-card answer">
-            <p><strong>Descentralización:</strong> La transferencia de facultades y competencias del Gobierno Central y de los recursos del Estado a las instancias descentralizadas.</p>
-            <p><strong>Desconcentración:</strong> La distribución de las competencias y funciones de las Entidades Públicas hacia los órganos bajo su dependencia.</p>
+            <p>a) Descentralización: La transferencia de facultades y competencias del Gobierno Central y de los recursos del Estado a las instancias descentralizadas.</p>
+            <p>b) Desconcentración: La distribución de las competencias y funciones de las Entidades Públicas hacia los órganos bajo su dependencia.</p>
         </div>
 
         <div class="quiz-card question">
@@ -524,7 +609,7 @@
             <h4>20. ¿A qué se refieren las habilidades técnicas?</h4>
         </div>
         <div class="quiz-card answer">
-            <p>Según Robert Katz, son el uso de los conocimientos específicos y la facilidad para aplicar técnicas relacionadas con el trabajo y los procedimientos. Las habilidades técnicas se relacionan con el hacer, es decir, con el trabajo con objetos ya sean físicos o procesos materiales.</p>
+            <p>Según Robert Katz. Son el uso de los conocimientos específicos y la facilidad para aplicar técnicas relacionadas con el trabajo y los procedimientos. Las habilidades técnicas se relacionan con el hacer, es decir, con el trabajo con objetos ya sean físicos o procesos materiales.</p>
         </div>
 
         <div class="quiz-card question">
@@ -534,9 +619,14 @@
             <p>O estructura matricial, es una configuración empresarial en la cual los empleados participan en proyectos puntuales sin dejar de atender sus funciones. Se usan canales duales: por un lado, la jerarquía principal y por otro, los programas específicos.</p>
             <p><strong>Características principales de la organización matricial:</strong></p>
             <ul>
-                <li>Permite operar en base a proyectos, dinamismo de talentos y recursos, comunicación y flujo de información libre.</li>
-                <li>Permite la excelencia de dos figuras gerenciales a la vez, desarrolla futuros gerentes y el peso de las responsabilidades se delega.</li>
-                <li>Ofrece respuestas más rápidas y eficientes, el fin de un proyecto no es el fin del trabajo.</li>
+                <li>Permite operar en base a proyectos</li>
+                <li>Dinamismo de talentos y recursos</li>
+                <li>Comunicación y flujo de información libre</li>
+                <li>Permite la excelencia de dos figuras gerenciales a la vez</li>
+                <li>Desarrolla futuros gerentes</li>
+                <li>El peso de las responsabilidades se delega</li>
+                <li>Ofrece respuestas más rápidas y eficientes</li>
+                <li>El fin de un proyecto no es el fin del trabajo</li>
             </ul>
             <p><strong>Ejemplo:</strong> Nestlé, la compañía multinacional suiza, es la más grande productora de alimentos del mundo y cuenta con más de 29 marcas registradas con ventas anuales mayores a 1,1 billones de dólares. Esta opera bajo la estructura de la matriz. La organización descentralizada de Nestlé permite que ramas subordinadas gocen de una independencia de alto nivel.</p>
         </div>
@@ -701,8 +791,6 @@
             <p><strong>Eficacia:</strong> Logro de objetivos.</p>
             <p><strong>Productividad:</strong> Equilibrio entre eficiencia y eficacia.</p>
         </div>
-
-        <!-- Agregar más preguntas y respuestas aquí -->
     </div>
 
     <elevenlabs-convai agent-id="MtYG2gpoiMDrx3bZ3va6"></elevenlabs-convai>
